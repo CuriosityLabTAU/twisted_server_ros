@@ -10,6 +10,9 @@ from twisted.internet import protocol
 import rospy
 from std_msgs.msg import String
 
+import json
+import ast
+
 
 class EchoProtocol(protocol.Protocol):
     def dataReceived(self, data):
@@ -30,21 +33,36 @@ from kivy.uix.label import Label
 
 
 class TwistedServerApp(App):
+    publishers = {}
+
     def build(self):
         self.label = Label(text="server started\n")
         reactor.listenTCP(8000, EchoFactory(self))
         rospy.init_node('twisted_node')
-        self.pub = rospy.Publisher('from_twisted', String, queue_size=10)
         return self.label
 
     def handle_message(self, msg):
         self.label.text = "received:  %s\n" % msg
-        self.pub.publish(msg)
-        if msg == "ping":
-            msg = "pong"
-        if msg == "plop":
-            msg = "kivy rocks"
-        self.label.text += "responded: %s\n" % msg
+        try:
+            msgs = []
+            spl = msg.split('}{')
+            for s in spl:
+                the_msg = s
+                if s[0] is not '{':
+                    the_msg = '{' + the_msg
+                if s[-1] is not '}':
+                    the_msg = the_msg + '}'
+                msgs.append(json.loads(the_msg))
+            for m in msgs:
+                for topic, message in m.items():
+                    if topic not in self.publishers:
+                        self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
+                    self.publishers[topic].publish(message)
+        except:
+            if 'from_twisted' not in self.publishers:
+                self.publishers['from_twisted'] = rospy.Publisher('from_twisted', String, queue_size=10)
+            self.publishers['from_twisted'].publish(msg)
+        self.label.text += "published: %s\n" % msg
         return msg
 
 
