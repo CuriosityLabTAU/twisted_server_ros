@@ -3,6 +3,7 @@
 from kivy.support import install_twisted_reactor
 install_twisted_reactor()
 
+from tega import Tega
 
 from twisted.internet import reactor
 from twisted.internet import protocol
@@ -43,6 +44,7 @@ class TwistedServerApp(App):
         reactor.listenTCP(8000, self.factory)
         rospy.init_node('twisted_node')
         rospy.Subscriber("to_twisted", String, self.transmit_msg)
+        self.publishers[topic] = Tega()
         return self.label
 
     def handle_message(self, msg, protocol_in):
@@ -64,17 +66,26 @@ class TwistedServerApp(App):
             for m in msgs:
                 for topic, message in m.items():
                     topic = str(topic)
-                    message = str(message)
-                    if topic not in self.publishers:
-                        self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
-                    self.publishers[topic].publish(message)
+                    self.send_message(topic, message)
         except:
             if 'from_twisted' not in self.publishers:
                 self.publishers['from_twisted'] = rospy.Publisher('from_twisted', String, queue_size=10)
             self.publishers['from_twisted'].publish(msg)
         self.label.text += "published: %s\n" % msg
+
+        # remove when tega is connected
         self.protocol.sendMessage(msg)
         return msg
+
+    def send_message(self, topic, message):
+        if topic not in self.publishers:
+            if topic == 'tega':
+                self.publishers[topic] = Tega()
+            else:
+                message = str(message)
+                self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
+
+        self.publishers[topic].publish(message)
 
     def transmit_msg(self, data):
         print('transmitting ', data.data)
