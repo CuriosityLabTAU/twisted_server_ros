@@ -44,7 +44,7 @@ class TwistedServerApp(App):
         reactor.listenTCP(8000, self.factory)
         rospy.init_node('twisted_node')
         rospy.Subscriber("to_twisted", String, self.transmit_msg)
-        self.publishers[topic] = Tega()
+        self.publishers['tega'] = Tega(self)
         return self.label
 
     def handle_message(self, msg, protocol_in):
@@ -74,13 +74,13 @@ class TwistedServerApp(App):
         self.label.text += "published: %s\n" % msg
 
         # remove when tega is connected
-        self.protocol.sendMessage(msg)
+        # self.protocol.sendMessage(msg)
         return msg
 
     def send_message(self, topic, message):
         if topic not in self.publishers:
             if topic == 'tega':
-                self.publishers[topic] = Tega()
+                self.publishers[topic] = Tega(self)
             else:
                 message = str(message)
                 self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
