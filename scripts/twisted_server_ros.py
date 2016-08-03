@@ -78,14 +78,12 @@ class TwistedServerApp(App):
         return msg
 
     def send_message(self, topic, message):
-        if topic not in self.publishers:
-            if topic == 'tega':
-                self.publishers[topic] = Tega(self)
-            else:
-                message = str(message)
+        if topic != 'tega':
+            message = str(message)
+            if topic not in self.publishers:
                 self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
-
         self.publishers[topic].publish(message)
+        print('published to ', topic, message)
 
     def transmit_msg(self, data):
         print('transmitting ', data.data)
