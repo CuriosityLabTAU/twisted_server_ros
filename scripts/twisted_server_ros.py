@@ -3,7 +3,8 @@
 from kivy.support import install_twisted_reactor
 install_twisted_reactor()
 
-from tega import Tega
+# from tega import Tega
+from nao import Nao
 
 from twisted.internet import reactor
 from twisted.internet import protocol
@@ -44,7 +45,8 @@ class TwistedServerApp(App):
         reactor.listenTCP(8000, self.factory)
         rospy.init_node('twisted_node')
         rospy.Subscriber("to_twisted", String, self.transmit_msg)
-        self.publishers['tega'] = Tega(self)
+        # self.publishers['tega'] = Tega(self)
+        self.publishers['nao'] = Nao(self)
         return self.label
 
     def handle_message(self, msg, protocol_in):
@@ -52,7 +54,6 @@ class TwistedServerApp(App):
         self.label.text = "received:  %s\n" % msg
         try:
             msgs = []
-            print(msg)
             spl = msg.split('}{')
             print(spl)
             for k in range(0, len(spl)):
@@ -61,7 +62,6 @@ class TwistedServerApp(App):
                     the_msg = '{' + the_msg
                 if k < (len(spl)-1):
                     the_msg = the_msg + '}'
-                print(the_msg)
                 msgs.append(json.loads(the_msg))
             for m in msgs:
                 for topic, message in m.items():
@@ -78,7 +78,7 @@ class TwistedServerApp(App):
         return msg
 
     def send_message(self, topic, message):
-        if topic != 'tega':
+        if topic != 'tega' and topic != 'nao':
             message = str(message)
             if topic not in self.publishers:
                 self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
