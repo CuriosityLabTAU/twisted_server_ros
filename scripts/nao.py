@@ -11,6 +11,8 @@ class Nao:
     animations = []
     current_animation = None
 
+
+
     def __init__(self, server=None):
         self.server = server
         self.publisher = rospy.Publisher('nao_commands', String, queue_size=10)
@@ -18,6 +20,8 @@ class Nao:
         self.current_animation = None
         self.doable_animations = None
         self.current_animation_seq = None
+
+        self.pose_list = ['LOOKAT_CHILD', 'LOOKAT_TABLET', 'POSE_FORWARD', 'EXCITED', 'LEFTRIGHTLOOKING', 'HAPPY_UP', 'PROUD', 'SAD']
         print('Finished initializing Nao')
 
 
@@ -30,8 +34,8 @@ class Nao:
         self.doable_animations = []
         for robot_action in self.current_animation[1:]:
             if robot_action.upper() == robot_action:
-                # pose
-                pass
+                if robot_action in self.pose_list:
+                    self.doable_animations.append(robot_action)
             else:
                 self.doable_animations.append(robot_action)
 
@@ -39,8 +43,7 @@ class Nao:
             self.send_finish_animation_sequence()
         else:
             for robot_action in self.doable_animations:
-                # filename
-                print('play filename: ', robot_action)
+                print('robot doing action:', robot_action)
                 self.publisher.publish(robot_action)
 
     def on_nao_state_msg(self, data):

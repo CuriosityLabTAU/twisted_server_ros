@@ -23,8 +23,8 @@ class NaoNode():
 
         # Get the Robot Configuration
         self.robotConfig = self.motionProxy.getRobotConfig()
+        self.motionProxy.rest()
         self.motionProxy.setStiffnesses("Body", 1.0)
-        # self.motionProxy.rest()
 
         self.publisher = rospy.Publisher('nao_state', String, queue_size=10)
 
@@ -40,25 +40,52 @@ class NaoNode():
         print("callback_nih", data.data)
         # self.tts.say(data.data)
         # self.tts.isRunning()
-        self.audioProxy.playFile('/home/nao/naoqi/wav/nih_howie/howie_wav/' + data.data + '.wav',1.0,0.0)
+        action = data.data
+        if action.lower() == action:
+            self.audioProxy.playFile('/home/nao/naoqi/wav/nih_howie/howie_wav/' + data.data + '.wav',1.0,0.0)
+        else:
+            self.do_animation(action)
         print('finished ', data.data)
         self.publisher.publish(data.data)
 
+    def do_animation(self, action):
+        if action == 'LOOKAT_TABLET':
+            self.change_pose('HeadPitch;29.0;0.1')
+        elif action == 'LOOKAT_CHILD':
+            self.change_pose('HeadPitch;0.0;0.1')
+        elif action == 'POSE_FORWARD':
+            self.change_pose('HeadPitch;0.0;0.1')
+        elif action == 'EXCITED':
+            self.change_pose('HeadPitch,RShoulderPitch;-10.0,-50.0;0.5')
+            self.change_pose('HeadPitch,RShoulderPitch;0.0,70.0;0.5')
+        elif action == 'LEFTRIGHTLOOKING':
+            self.change_pose('HeadYaw;-50.0;0.2')
+            self.change_pose('HeadYaw;50.0;0.2')
+            self.change_pose('HeadYaw;0.0;0.1')
+        elif action == 'HAPPY_UP':
+            self.change_pose('HeadPitch,HeadYaw,RShoulderPitch,LShoulderPitch;-10.0,-10.0,-50.0,-50.0;0.5')
+            self.change_pose('HeadPitch,HeadYaw,RShoulderPitch,LShoulderPitch;0.0,0.0,70.0,70.0;0.5')
+        elif action == 'PROUD':
+            self.change_pose('RShoulderPitch,RElbowYaw;-50.0,-50.0;0.2')
+            self.change_pose('RShoulderPitch,RElbowYaw;50.0,-10.0;0.2')
+        elif action == 'SAD':
+            self.change_pose('HeadPitch,HeadYaw;10.0,10.0;0.05')
+            self.change_pose('HeadPitch,HeadYaw;0.0,0.0;0.1')
 
-    def callback_pysical(self, data):
-        # data = 'name1, name2;target1, target2;pMaxSpeedFraction'
-        data_str = data.data
+    def change_pose(self, data_str):
+        # data_str = 'name1, name2;target1, target2;pMaxSpeedFraction'
+
         info = data_str.split(';')
 
         pNames = info[0].split(',')
 
-        pTargetAngles = [float(x) for x in info[1].split()]
+        pTargetAngles = [float(x) for x in info[1].split(',')]
         pTargetAngles = [ x * almath.TO_RAD for x in pTargetAngles]             # Convert to radians
 
         pMaxSpeedFraction = float(info[2])
 
         print(pNames, pTargetAngles, pMaxSpeedFraction)
-        self.motionProxy.angleInterpolationWithSpeed(pNames, pTargetAngles, pMaxSpeedFraction)
+        self.motionProxy.post.angleInterpolationWithSpeed(pNames, pTargetAngles, pMaxSpeedFraction)
 
 nao = NaoNode()
 nao.start()
