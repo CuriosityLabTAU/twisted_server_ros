@@ -3,8 +3,12 @@
 from kivy.support import install_twisted_reactor
 install_twisted_reactor()
 
-# from tega import Tega
-from nao import Nao
+STUDY_SITE = 'MIT'      #'TAU'      # MIT
+
+if STUDY_SITE == 'MIT':
+    from tega import Tega
+elif STUDY_SITE == 'TAU':
+    from nao import Nao
 
 from twisted.internet import reactor
 from twisted.internet import protocol
@@ -45,8 +49,10 @@ class TwistedServerApp(App):
         reactor.listenTCP(8000, self.factory)
         rospy.init_node('twisted_node')
         rospy.Subscriber("to_twisted", String, self.transmit_msg)
-        # self.publishers['tega'] = Tega(self)
-        self.publishers['nao'] = Nao(self)
+        if STUDY_SITE == 'MIT':
+            self.publishers['tega'] = Tega(self)
+        elif STUDY_SITE == 'TAU':
+            self.publishers['nao'] = Nao(self)
         return self.label
 
     def handle_message(self, msg, protocol_in):
