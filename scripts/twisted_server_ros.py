@@ -3,7 +3,7 @@
 from kivy.support import install_twisted_reactor
 install_twisted_reactor()
 
-STUDY_SITE = 'MIT'      #'TAU'      # MIT
+STUDY_SITE = 'TAU'      #'TAU'      # MIT
 
 if STUDY_SITE == 'MIT':
     from tega import Tega

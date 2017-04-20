@@ -7,13 +7,15 @@ import almath
 
 class NaoNode():
     def __init__(self):
-        # self.robotIP = '192.168.0.100'
         self.robotIP = '192.168.0.100'
+       # self.robotIP = '192.168.0.101'
         self.port = 9559
 
         try:
             self.motionProxy = ALProxy("ALMotion", self.robotIP, self.port)
             self.audioProxy = ALProxy("ALAudioPlayer", self.robotIP, self.port)
+            self.managerProxy = ALProxy("ALBehaviorManager", self.robotIP, 9559)
+            self.postureProxy = ALProxy("ALRobotPosture", self.robotIP, self.port)
             tracker = ALProxy("ALTracker", self.robotIP, self.port)
             self.tts = ALProxy("ALTextToSpeech", self.robotIP, self.port)
         except Exception,e:
@@ -42,7 +44,11 @@ class NaoNode():
         # self.tts.isRunning()
         action = data.data
         if action.lower() == action:
-            self.audioProxy.playFile('/home/nao/naoqi/wav/nih_howie/howie_wav/' + data.data + '.wav',1.0,0.0)
+            # self.audioProxy.playFile('/home/nao/naoqi/wav/nih_howie/howie_wav/' + data.data + '.wav',1.0,0.0)
+            if (action == 'introduction_all_0'):
+                self.postureProxy.goToPosture("StandInit", 0.5)
+                self.managerProxy.post.runBehavior("movements/introduction_all_0")
+            self.audioProxy.playFile('/home/nao/wav/' + data.data + '.wav',1.0,0.0)
         else:
             self.do_animation(action)
         print('finished ', data.data)
@@ -56,15 +62,17 @@ class NaoNode():
         elif action == 'POSE_FORWARD':
             self.change_pose('HeadPitch;0.0;0.1')
         elif action == 'EXCITED':
-            self.change_pose('HeadPitch,RShoulderPitch;-10.0,-50.0;0.5')
-            self.change_pose('HeadPitch,RShoulderPitch;0.0,70.0;0.5')
+            #self.change_pose('HeadPitch,RShoulderPitch;-10.0,-50.0;0.5')
+            #self.change_pose('HeadPitch,RShoulderPitch;0.0,70.0;0.5')
+            self.managerProxy.post.runBehavior("movements/raise_the_roof/raise_the_roof")
         elif action == 'LEFTRIGHTLOOKING':
             self.change_pose('HeadYaw;-50.0;0.2')
             self.change_pose('HeadYaw;50.0;0.2')
             self.change_pose('HeadYaw;0.0;0.1')
         elif action == 'HAPPY_UP':
-            self.change_pose('HeadPitch,HeadYaw,RShoulderPitch,LShoulderPitch;-10.0,-10.0,-50.0,-50.0;0.5')
-            self.change_pose('HeadPitch,HeadYaw,RShoulderPitch,LShoulderPitch;0.0,0.0,70.0,70.0;0.5')
+            #self.change_pose('HeadPitch,HeadYaw,RShoulderPitch,LShoulderPitch;-10.0,-10.0,-50.0,-50.0;0.5')
+            #self.change_pose('HeadPitch,HeadYaw,RShoulderPitch,LShoulderPitch;0.0,0.0,70.0,70.0;0.5')
+            self.managerProxy.post.runBehavior("movements/raise_the_roof/raise_the_roof")
         elif action == 'PROUD':
             self.change_pose('RShoulderPitch,RElbowYaw;-50.0,-50.0;0.2')
             self.change_pose('RShoulderPitch,RElbowYaw;50.0,-10.0;0.2')
