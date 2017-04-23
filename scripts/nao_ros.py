@@ -4,7 +4,7 @@ from naoqi import ALProxy
 import sys
 import almath
 
-#rinat made changes
+#rinat made changes g
 class NaoNode():
     def __init__(self):
         self.robotIP = '192.168.0.100'
