@@ -30,7 +30,6 @@ class Tega:
         """ Publish TegaAction do motion message """
         print 'sending motion message: %s' % motion
         msg = TegaAction()
-        msg.do_motion = True
         msg.motion = motion
         self.publisher.publish(msg)
         rospy.loginfo(msg)
@@ -48,8 +47,7 @@ class Tega:
         """ Publish TegaAction playback audio message """
         print '\nsending speech message: %s' % speech
         msg = TegaAction()
-        msg.do_sound_playback = True
-        msg.wav_filename = 'mindset/' + speech + '.wav'
+        msg.wav_filename = 'mindset2/' + speech + '.wav'
         self.publisher.publish(msg)
         rospy.loginfo(msg)
         self.sound['file'] = speech
