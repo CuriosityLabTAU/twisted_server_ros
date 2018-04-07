@@ -3,10 +3,13 @@
 from kivy.support import install_twisted_reactor
 install_twisted_reactor()
 
-STUDY_SITE = 'TAU'      #'TAU'      # MIT
+#STUDY_SITE = 'MIT-JIBO'      #'TAU'      # MIT
+STUDY_SITE = 'MIT-JIBO'      #'TAU'      # MIT
 
 if STUDY_SITE == 'MIT':
     from tega import Tega
+elif STUDY_SITE == 'MIT-JIBO':
+    from jibo import Jibo
 elif STUDY_SITE == 'TAU':
     from nao import Nao
 
@@ -51,6 +54,8 @@ class TwistedServerApp(App):
         rospy.Subscriber("to_twisted", String, self.transmit_msg)
         if STUDY_SITE == 'MIT':
             self.publishers['tega'] = Tega(self)
+        elif STUDY_SITE == 'MIT-JIBO':
+            self.publishers['jibo'] = Jibo(self)
         elif STUDY_SITE == 'TAU':
             self.publishers['nao'] = Nao(self)
         return self.label
@@ -61,6 +66,7 @@ class TwistedServerApp(App):
         try:
             msgs = []
             spl = msg.split('}{')
+            print ("\n")
             print(spl)
             for k in range(0, len(spl)):
                 the_msg = spl[k]
@@ -73,7 +79,9 @@ class TwistedServerApp(App):
                 for topic, message in m.items():
                     topic = str(topic)
                     self.send_message(topic, message)
-        except:
+        except Exception as e:
+            print e
+
             if 'from_twisted' not in self.publishers:
                 self.publishers['from_twisted'] = rospy.Publisher('from_twisted', String, queue_size=10)
             self.publishers['from_twisted'].publish(msg)
@@ -84,7 +92,9 @@ class TwistedServerApp(App):
         return msg
 
     def send_message(self, topic, message):
-        if topic != 'tega' and topic != 'nao':
+        print ("\n[TOPIC,MSG]")
+        print (topic, message)
+        if topic != 'tega' and topic != 'nao' and topic != 'jibo':
             message = str(message)
             if topic not in self.publishers:
                 self.publishers[topic] = rospy.Publisher(topic, String, queue_size=10)
