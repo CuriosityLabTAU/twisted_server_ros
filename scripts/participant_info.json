@@ -1,4 +1,9 @@
 {
+    "p000": {
+        "condition": "c-g+", 
+        "name": "Eldana", 
+        "sex": "F"
+    }, 
     "p001": {
         "condition": "c-g+", 
         "name": "Eldana", 
