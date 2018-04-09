@@ -1,292 +1,487 @@
 {
     "p000": {
-        "condition": "c-g+", 
-        "name": "Eldana", 
+        "condition": "c+g+", 
+        "name": "Hey One", 
         "sex": "F"
     }, 
     "p001": {
-        "condition": "c-g+", 
+        "condition": "c+g-", 
         "name": "Eldana", 
         "sex": "F"
     }, 
     "p002": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Noah", 
         "sex": "M"
     }, 
     "p003": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Yared", 
         "sex": "M"
     }, 
     "p005": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Isalis", 
         "sex": "F"
     }, 
     "p006": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Knulah", 
-        "sex": ""
+        "sex": "F"
     }, 
     "p007": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Natmnaelle", 
         "sex": "F"
     }, 
     "p008": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Ermilly", 
         "sex": "F"
     }, 
     "p009": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Malose", 
         "sex": "M"
     }, 
     "p010": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Nayah", 
         "sex": "F"
     }, 
     "p011": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Omar", 
         "sex": "M"
     }, 
     "p012": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Treyshon", 
         "sex": "M"
     }, 
     "p013": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "DJesminda", 
         "sex": "F"
     }, 
     "p014": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Dylan", 
         "sex": "M"
     }, 
     "p015": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Samuel", 
         "sex": "M"
     }, 
     "p016": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Darshly", 
         "sex": "F"
     }, 
     "p017": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Christian", 
         "sex": "F"
     }, 
     "p018": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Farhaan", 
         "sex": "M"
     }, 
     "p019": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Joshua", 
         "sex": "M"
     }, 
     "p020": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Zyaire", 
         "sex": "M"
     }, 
     "p021": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Ethan", 
         "sex": "M"
     }, 
     "p022": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Elijah", 
         "sex": "M"
     }, 
     "p023": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Stanley", 
         "sex": "M"
     }, 
     "p024": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Jonathan", 
         "sex": "M"
     }, 
     "p025": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Schuyler", 
         "sex": "F"
     }, 
     "p026": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Kaylee", 
         "sex": "F"
     }, 
     "p027": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Isabella", 
         "sex": "F"
     }, 
     "p028": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Ramin", 
         "sex": "M"
     }, 
     "p029": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Kalaeb", 
         "sex": "M"
     }, 
     "p030": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Feddy", 
         "sex": "M"
     }, 
     "p031": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Luciana", 
         "sex": "F"
     }, 
     "p032": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Lily M.", 
         "sex": "F"
     }, 
     "p033": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Yunicka T.", 
         "sex": "F"
     }, 
     "p034": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Skylar", 
         "sex": "F"
     }, 
     "p035": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Dianie D.", 
         "sex": "F"
     }, 
     "p036": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Afomia", 
         "sex": "F"
     }, 
     "p037": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Gaerald", 
         "sex": "M"
     }, 
     "p038": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Jiovanni", 
         "sex": "M"
     }, 
     "p039": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Aiden", 
         "sex": "M"
     }, 
     "p040": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Dany", 
         "sex": "M"
     }, 
     "p041": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Ahmaud", 
         "sex": "M"
     }, 
     "p042": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Arielle H", 
         "sex": "F"
     }, 
     "p043": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Malachi Y.", 
         "sex": "M"
     }, 
     "p044": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Elijah", 
         "sex": "M"
     }, 
     "p045": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Ridima", 
         "sex": "F"
     }, 
     "p046": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Caine", 
         "sex": "M"
     }, 
     "p047": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Macheylla", 
         "sex": "F"
     }, 
     "p048": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Kye", 
         "sex": "M"
     }, 
     "p049": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Nyah", 
         "sex": "F"
     }, 
     "p050": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Steven", 
         "sex": "M"
     }, 
     "p051": {
-        "condition": "", 
+        "condition": "c-g-", 
         "name": "Layla", 
         "sex": "F"
     }, 
     "p052": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Jomar", 
         "sex": "M"
     }, 
     "p053": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Aruind", 
         "sex": "M"
     }, 
     "p054": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Roshan G.", 
         "sex": "M"
     }, 
     "p055": {
-        "condition": "", 
+        "condition": "c+g-", 
         "name": "Gabriel B.", 
         "sex": "M"
     }, 
     "p056": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Maurice", 
         "sex": "M"
     }, 
     "p057": {
-        "condition": "", 
+        "condition": "c+g+", 
         "name": "Yuiama", 
         "sex": "F"
     }, 
     "p058": {
-        "condition": "", 
+        "condition": "c-g+", 
         "name": "Dominic", 
         "sex": "M"
+    }, 
+    "p101": {
+        "condition": "c-g+", 
+        "name": "Alana", 
+        "sex": "F"
+    }, 
+    "p102": {
+        "condition": "c-g+", 
+        "name": "Benson", 
+        "sex": "M"
+    }, 
+    "p103": {
+        "condition": "c-g+", 
+        "name": "Mika", 
+        "sex": "F"
+    }, 
+    "p104": {
+        "condition": "c-g+", 
+        "name": "Raunel", 
+        "sex": "M"
+    }, 
+    "p105": {
+        "condition": "c-g+", 
+        "name": "Elias", 
+        "sex": "M"
+    }, 
+    "p106": {
+        "condition": "c-g+", 
+        "name": "Brianny Nova", 
+        "sex": "F"
+    }, 
+    "p107": {
+        "condition": "c-g+", 
+        "name": "Henry", 
+        "sex": "M"
+    }, 
+    "p108": {
+        "condition": "c-g-", 
+        "name": "Jovan", 
+        "sex": "M"
+    }, 
+    "p109": {
+        "condition": "c-g-", 
+        "name": "Emmanuel", 
+        "sex": "M"
+    }, 
+    "p110": {
+        "condition": "c+g+", 
+        "name": "Conrad", 
+        "sex": "M"
+    }, 
+    "p111": {
+        "condition": "c-g+", 
+        "name": "Matilda", 
+        "sex": "F"
+    }, 
+    "p112": {
+        "condition": "c-g+", 
+        "name": "Jinelsi", 
+        "sex": "F"
+    }, 
+    "p113": {
+        "condition": "c-g-", 
+        "name": "Chasity", 
+        "sex": "F"
+    }, 
+    "p114": {
+        "condition": "c-g-", 
+        "name": "Monica", 
+        "sex": "F"
+    }, 
+    "p115": {
+        "condition": "c-g-", 
+        "name": "Chrismely", 
+        "sex": "F"
+    }, 
+    "p116": {
+        "condition": "c-g+", 
+        "name": "Leah", 
+        "sex": "F"
+    }, 
+    "p117": {
+        "condition": "c-g-", 
+        "name": "Hildana", 
+        "sex": "F"
+    }, 
+    "p118": {
+        "condition": "c+g+", 
+        "name": "Xavier", 
+        "sex": "M"
+    }, 
+    "p119": {
+        "condition": "c+g+", 
+        "name": "Deven", 
+        "sex": "M"
+    }, 
+    "p120": {
+        "condition": "c-g-", 
+        "name": "Yifan", 
+        "sex": "F"
+    }, 
+    "p121": {
+        "condition": "c+g-", 
+        "name": "Kloe", 
+        "sex": "F"
+    }, 
+    "p122": {
+        "condition": "c+g+", 
+        "name": "Munira", 
+        "sex": "F"
+    }, 
+    "p123": {
+        "condition": "c+g+", 
+        "name": "Jazlyn", 
+        "sex": "F"
+    }, 
+    "p124": {
+        "condition": "c+g-", 
+        "name": "Salman", 
+        "sex": "M"
+    }, 
+    "p125": {
+        "condition": "c+g-", 
+        "name": "Judah", 
+        "sex": "M"
+    }, 
+    "p126": {
+        "condition": "c+g+", 
+        "name": "Karis", 
+        "sex": "F"
+    }, 
+    "p127": {
+        "condition": "c+g-", 
+        "name": "Omar", 
+        "sex": "M"
+    }, 
+    "p128": {
+        "condition": "c+g+", 
+        "name": "Emily", 
+        "sex": "F"
+    }, 
+    "p129": {
+        "condition": "c+g+", 
+        "name": "Dove", 
+        "sex": "F"
+    }, 
+    "p130": {
+        "condition": "c+g-", 
+        "name": "Aiden", 
+        "sex": "M"
+    }, 
+    "p131": {
+        "condition": "c+g+", 
+        "name": "Levi", 
+        "sex": "M"
+    }, 
+    "p132": {
+        "condition": "c-g-", 
+        "name": "Benjamin", 
+        "sex": "M"
+    }, 
+    "p133": {
+        "condition": "c+g+", 
+        "name": "Chandler", 
+        "sex": "F"
+    }, 
+    "p134": {
+        "condition": "c-g-", 
+        "name": "Angel", 
+        "sex": "M"
+    }, 
+    "p135": {
+        "condition": "c+g-", 
+        "name": "Jazlyn", 
+        "sex": "F"
+    }, 
+    "p136": {
+        "condition": "c+g-", 
+        "name": "Leelawadee", 
+        "sex": "F"
+    }, 
+    "p137": {
+        "condition": "c+g-", 
+        "name": "Rishi", 
+        "sex": "M"
+    }, 
+    "p138": {
+        "condition": "c-g-", 
+        "name": "Ellis", 
+        "sex": "F"
+    }, 
+    "p139": {
+        "condition": "c+g-", 
+        "name": "Gonsalez", 
+        "sex": "F"
     }
 }

@@ -21,13 +21,13 @@ def main(info):
     f = open(json_file)
     info_dict = json.loads(f.read())
 
-    msg = "pid:"+info[0]+",condition:"+info_dict[info[0]]['condition']+",world:w"+info[1]+","+info[2]
+    #msg = "pid:"+info[0]+",condition:"+info_dict[info[0]]['condition']+",world:w"+info[1]+","+info[2]
     #print msg
 
-    publisher.publish(msg)
+    #publisher.publish(msg)
 
-    print "Sent "+info[2]+" command for "+info[0]+" Session " + info[1]
-    print
+    #print "Sent "+info[2]+" command for "+info[0]+" Session " + info[1]
+    #print
 
     try:
         while True:
@@ -35,8 +35,7 @@ def main(info):
             command = raw_input(">> ")
 
             if command == 'start' or command == 'continue':
-                msg = "pid:" + info[0] + ",condition:" + info_dict[info[0]]['condition'] + ",world:w" + info[1] + "," + \
-                  command
+                msg = "pid:" + info[0] + ",condition:" + info_dict[info[0]]['condition'] + ",world:w" + info[1] + "," + command
                 publisher.publish(msg)
 
                 print "Sent " + command + " command for " + info[0] + " Session " + info[1]

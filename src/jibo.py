@@ -4,6 +4,7 @@ from std_msgs.msg import Header  # standard ROS msg header
 import json
 import time
 
+IDLE_MAX = 5
 
 class Jibo:
 
@@ -15,15 +16,22 @@ class Jibo:
     def __init__(self, server=None):
         self.server = server
         self.robot_commander = rospy.Publisher('/jibo', JiboAction, queue_size=10)
-        # rospy.Subscriber('/jibo_state', JiboState, self.on_jibo_state_msg)
+        rospy.Subscriber('/jibo_state', JiboState, self.on_jibo_state_msg)
         self.sound = {'started': False, 'playing': False, 'stopped': False, 'file': None}
         self.motion = {'started': False, 'playing': False, 'stopped': False, 'name': None}
+        self.idle_counter = 0
+        self.play_anim = False
+        self.anim_tran_fixed = False
+        self.send_robot_anim_transition_cmd(JiboAction.ANIMTRANS_RESET)
         print('Finished initializing Jibo')
 
     def publish(self, message):
         print('jibo: ', message)
         self.animations.append({'expression': message[0], 'sequence': message[1][0:1]})
         print('animation:', self.animations)
+        if self.anim_tran_fixed:
+            self.send_robot_anim_transition_cmd(JiboAction.ANIMTRANS_RESET)
+            self.anim_tran_fixed = False
         self.update_animations()
 
     def send_robot_motion_cmd(self, command):
@@ -197,33 +205,38 @@ class Jibo:
         self.robot_commander.publish(msg)
         rospy.loginfo(msg)
 
-    # def on_jibo_state_msg(self, data):
-    #     self.sound['started'] = data.is_playing_sound and not self.sound['playing']
-    #     self.sound['stopped'] = self.sound['playing'] and not data.is_playing_sound
-    #     self.sound['playing'] = data.is_playing_sound
-    #
-    #     self.motion['started'] = data.doing_motion and not self.motion['playing']
-    #     self.motion['stopped'] = (self.motion['playing'] and not data.doing_motion)
-    #     self.motion['playing'] = data.doing_motion
-    #
-    #     # print('on_jibo_state_msg', self.motion, data.in_motion)
-    #
-    #     if not self.sound['playing'] and not self.motion['playing']:
-    #         if self.motion['stopped'] or (not self.motion['playing'] and self.sound['stopped']):
-    #             print(self.sound, self.motion)
-    #             self.update_animations()
+    def on_jibo_state_msg(self, data):
+        if self.play_anim:
+            if not data.is_playing_sound and not data.doing_motion:
+                self.idle_counter += 1
+
+            if self.idle_counter > IDLE_MAX:
+                self.idle_counter = 0
+                self.play_anim = False
+                if self.current_expression in ['explain_move','ask_question_robot_play','my_turn','comment_selection','comment_move']:
+                    self.send_robot_motion_cmd("Poses/Directional/Body_Look_Center_Down_01_01.keys")
+                elif self.current_expression == 'end_party':
+                    self.send_robot_motion_cmd("Poses/Directional/Body_Look_Center_Down_01_01.keys")
+                    self.send_robot_anim_transition_cmd(JiboAction.ANIMTRANS_KEEP_LASTFRAME)
+                    self.send_robot_motion_cmd("Eye-Globals/open-to-close_01.keys")
+                    self.anim_tran_fixed = True
+                time.sleep(0.5)
+                self.update_animations()
 
     def update_animations(self):
         print('\nremaining animations:', self.animations, len(self.animations))
         if len(self.animations[0]['sequence']) > 0:
             self.current_animation = self.animations[0]['sequence'][0]
-            self.animations[0]['sequence'] = self.animations[0]['sequence'][1:]
+            print "current animation: "+self.current_animation
+            self.current_animation = self.current_animation.encode('ascii', 'ignore').replace("idle","").split(':')[-1]
+            self.send_robot_tts_cmd(self.current_animation)
 
-            print self.current_animation
-            # send TTS command
-            if ' ' in self.current_animation:
-                self.send_robot_tts_cmd(self.current_animation)
-            self.update_animations()
+            self.current_expression = self.animations[0]['expression']
+            self.play_anim = True
+
+            self.animations[0]['sequence'] = self.animations[0]['sequence'][1:]
+            #self.update_animations()
+
         #    elif 'lookat_' in self.current_animation:
         #        self.send_lookat_message(self.current_animation.replace('lookat_', ''))
         #    elif self.current_animation.isupper():
