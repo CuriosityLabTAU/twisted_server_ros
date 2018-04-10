@@ -237,7 +237,7 @@ class Jibo:
                 self.jibo_sleep()
                 print "put jibo sleep"
                 return
-            
+
             self.current_animation = self.animations[0]['sequence'][0]
             print "current animation: "+self.current_animation
             self.current_animation = self.current_animation.encode('ascii', 'ignore').replace("idle","").split(':')[-1]
