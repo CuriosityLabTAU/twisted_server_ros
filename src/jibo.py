@@ -233,7 +233,7 @@ class Jibo:
     def update_animations(self):
         print('\nremaining animations:', self.animations, len(self.animations))
         if len(self.animations) > 0 and len(self.animations[0]['sequence']) > 0:
-            if self.animations[0]['expression'] == "tega_init":
+            if self.animations[0]['expression'] == "tega_sleep":
                 self.jibo_sleep()
                 print "put jibo sleep"
                 return
@@ -250,9 +250,9 @@ class Jibo:
             counter = 0
             while (self.playing_tts != self.current_animation):
                 print "not identical: ", self.current_animation, self.playing_tts
-                if counter == 25:    # wait for 5 seconds, resend command once more
+                if counter == 32:    # wait for .. seconds, resend command once more
                     self.send_robot_tts_cmd(self.current_animation)
-                elif counter == 40:     # wait for 8 seconds, and move on
+                elif counter == 64:     # wait for .. seconds, and move on
                     self.update_animations()
                     break
                 counter += 1
