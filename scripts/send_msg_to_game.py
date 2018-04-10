@@ -31,8 +31,13 @@ def main(info):
 
     try:
         while True:
-            print "Enter 'start' or 'continue'"
+            print "Enter 's' or 'c'"
             command = raw_input(">> ")
+
+            if command == "s":
+                command = "start"
+            elif command == "c":
+                command = "continue"
 
             if command == 'start' or command == 'continue':
                 msg = "pid:" + info[0] + ",condition:" + info_dict[info[0]]['condition'] + ",world:w" + info[1] + "," + command
@@ -41,7 +46,7 @@ def main(info):
                 print "Sent " + command + " command for " + info[0] + " Session " + info[1]
                 print
             else:
-                print "wrong commang"
+                print "wrong command!!!"
                 print
 
     except KeyboardInterrupt:

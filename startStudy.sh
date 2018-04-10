@@ -41,5 +41,5 @@ gnome-terminal --geometry 24x12+0+0 --title ">>>Mindset Study MAIN<<<" -e "scrip
 
 #gnome-terminal --geometry 24x12+0+400 --title ">>>Front Camera View<<<" -e "roslaunch cv_camera cv_camera.launch"
 
-#scripts/rosbag_record.sh $1 $2 $entry
+scripts/rosbag_record.sh $1 $2 $entry
 
