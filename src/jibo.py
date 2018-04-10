@@ -233,6 +233,11 @@ class Jibo:
     def update_animations(self):
         print('\nremaining animations:', self.animations, len(self.animations))
         if len(self.animations) > 0 and len(self.animations[0]['sequence']) > 0:
+            if self.animations[0]['expression'] == "tega_init":
+                self.jibo_sleep()
+                print "put jibo sleep"
+                return
+            
             self.current_animation = self.animations[0]['sequence'][0]
             print "current animation: "+self.current_animation
             self.current_animation = self.current_animation.encode('ascii', 'ignore').replace("idle","").split(':')[-1]
@@ -254,9 +259,6 @@ class Jibo:
                 time.sleep(0.2)
 
             self.play_anim = True
-
-            if self.animations[0]['expression'] == "tega_init":
-                self.jibo_sleep()
 
             #self.update_animations()
 
