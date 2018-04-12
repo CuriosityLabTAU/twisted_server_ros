@@ -223,7 +223,7 @@ class Jibo:
             if self.idle_counter > IDLE_MAX:
                 self.idle_counter = 0
                 self.play_anim = False
-                if self.current_expression in ['explain_move','ask_question_robot_play','my_turn','comment_selection','comment_move']:
+                if self.current_expression in ['explain_move','your_turn','ask_question_robot_play','my_turn','comment_selection','comment_move']:
                     self.send_robot_motion_cmd("Poses/Directional/Body_Look_Center_Down_01_01.keys")
                 elif self.current_expression == 'end_party':
                     self.jibo_sleep()
