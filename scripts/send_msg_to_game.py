@@ -31,15 +31,17 @@ def main(info):
 
     try:
         while True:
-            print "Enter 's' or 'c'"
+            print "Enter 's (start)', 'k (skip)', or 'c (continue)'"
             command = raw_input(">> ")
 
             if command == "s":
                 command = "start"
             elif command == "c":
                 command = "continue"
+            elif command == "k":
+                command = "skip"
 
-            if command == 'start' or command == 'continue':
+            if command == 'start' or command == 'continue' or command == 'skip':
                 msg = "pid:" + info[0] + ",condition:" + info_dict[info[0]]['condition'] + ",world:w" + info[1] + "," + command
                 publisher.publish(msg)
 
