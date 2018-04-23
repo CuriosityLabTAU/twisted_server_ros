@@ -228,7 +228,7 @@
     "all": [
       ["<es name = 'Body_Lean_Forward_01'> its your turn now. </es>","LOOKAT_CHILD","your_turn_all_0"],
       ["<es name = 'excited_01'> you try to open a box now. </es>","LOOKAT_CHILD","your_turn_all_1"],
-      ["<es name = 'Body_Lean_Forward_01'/> now you get us a new shell. ","LOOKAT_CHILD","your_turn_all_2"],
+      ["<es name = 'Body_Lean_Forward_01'/> now you get us a new   <prize-name>. ","LOOKAT_CHILD","your_turn_all_2"],
       ["<es name = 'excited_02'>you are next. </es>","LOOKAT_CHILD","your_turn_all_3"],
       ["<es cat = 'happy' filter = 'excited'>ok, now you go. </es>","LOOKAT_CHILD","your_turn_all_4"],
       ["<es cat = 'happy' filter = 'excited'>so, it is your turn now. </es>","LOOKAT_CHILD","your_turn_all_5"]
@@ -270,7 +270,7 @@
       ["I will select a puzzle that I might be able to solve. <es cat = 'relieved' />","my_turn_c-g-_0", "POSE_FORWARD"]
     ],
     "c-g+":[
-      ["selection current: Even if it looks difficult, I will work hard to get us the next shell.","my_turn_c-g+_0","SILENT_YES", "POSE_FORWARD"],
+      ["selection current: Even if it looks difficult, I will work hard to get us the next <prize-name>.","my_turn_c-g+_0","SILENT_YES", "POSE_FORWARD"],
       ["selection next: Even it looks hard, I will give my best.","my_turn_c-g+_1","SILENT_YES", "POSE_FORWARD"],
       ["selection question mark: If I try hard, I will succeed.","my_turn_c-g+_2", "POSE_FORWARD"]
     ],
@@ -318,7 +318,7 @@
       ["POSE_FORWARD"],
       ["<es cat='happy' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
-      ["<es cat='curious' />what's your next move?","comment_move_c-g-_2"],
+      ["<es cat='curious' />what's your next move, <participant-name>?","comment_move_c-g-_2"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
@@ -334,7 +334,7 @@
       ["POSE_FORWARD"],
       ["<es cat='happy' /> Try till you succeed.", "POSE_FORWARD"],
       ["POSE_FORWARD"],
-      ["<es cat='curious' />what's your next move?","comment_move_c-g-_2"],
+      ["<es cat='curious' />what's your next move, <participant-name>?","comment_move_c-g-_2"],
       ["POSE_FORWARD"],
       ["<es cat='happy' /> keep going", "POSE_FORWARD"],
       ["POSE_FORWARD"],
@@ -346,7 +346,7 @@
     "c+g-": [
       ["<es cat='confirm' /> keep using interesting strategies.","comment_move_c+g-_2","INTERESTED","POSE_FORWARD"],
       ["POSE_FORWARD"],
-      ["<es cat='curious' />what's your next move?","comment_move_c-g-_2"],
+      ["<es cat='curious' />what's your next move, <participant-name>?","comment_move_c-g-_2"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' /> ah ha!","comment_move_c+g-_1","YES","POSE_FORWARD"],
       ["POSE_FORWARD"],
@@ -360,13 +360,13 @@
     "c+g+": [
       ["<es cat='proud' /> keep trying new ideas.","comment_move_c+g+_1","AGREEMENT","POSE_FORWARD"],
       ["POSE_FORWARD"],
-      ["<es cat='curious' />what's your next move?","comment_move_c-g-_2"],
+      ["<es cat='curious' />what's your next move, <participant-name>?","comment_move_c-g-_2"],
       ["POSE_FORWARD"],
       ["<es cat='happy' /> you are learning so much by trying hard", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["umhmm","comment_move_c+g+_2","INTERESTED","POSE_FORWARD"],
       ["POSE_FORWARD"],
-      ["I know you never give up!","comment_move_c+g+_0","SILENT_INTERESTED","POSE_FORWARD"],
+      ["I know you never give up, <participant-name>!","comment_move_c+g+_0","SILENT_INTERESTED","POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='curious' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],

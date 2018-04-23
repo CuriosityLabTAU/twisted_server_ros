@@ -54,8 +54,8 @@ class Jibo:
             del(self.tts_thread_child_turn)
             self.tts_thread_child_turn = None
 
-        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=6, speech_list=self.speech['explain_move'][self.condition])
-        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=7, speech_list=self.speech['comment_move'][self.condition])
+        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=7, speech_list=self.speech['explain_move'][self.condition])
+        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=9, speech_list=self.speech['comment_move'][self.condition])
 
     def load_text(self, filename=''):  #robot_text_revised3
         speech = {}
