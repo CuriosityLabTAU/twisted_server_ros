@@ -24,36 +24,38 @@ class Jibo:
         self.play_anim = False
         self.anim_tran_fixed = False
         self.playing_tts = ''
+        self.speech = self.load_text('scripts/robot_text_long_general.json')
+        self.tts_thread_robot_turn = None
+        self.tts_thread_child_turn = None
         self.condition = ''
         try:
             with open('condition_log.txt','r') as f:
                 for line in f:
                     pass
-                self.set_condition(line)
+                self.set_condition(line.replace('\n',''))
         except IOError:
+            print "no file"
             pass
         print self.condition
-        self.speech = self.load_text('scripts/robot_text_long_general.json')
-        self.tts_thread_robot_turn = None
-        self.tts_thread_child_turn = None
+
 
         self.send_robot_anim_transition_cmd(JiboAction.ANIMTRANS_RESET)
         print('Finished initializing Jibo')
 
     def set_condition(self, cond):
-        if self.condition != cond:
-            self.condition = cond
-            if self.tts_thread_robot_turn is not None:
-                self.tts_thread_robot_turn.cancel()
-                del(self.tts_thread_robot_turn)
-            if self.tts_thread_child_turn is not None:
-                self.tts_thread_child_turn.cancel()
-                del(self.tts_thread_child_turn)
+        self.condition = cond
 
-        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=8,
-                                                    speech_list=self.speech['explain_move'][self.condition])
-        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=8,
-                                                    speech_list=self.speech['comment_move'][self.condition])
+        if self.tts_thread_robot_turn is not None:
+            self.tts_thread_robot_turn.cancel()
+            del(self.tts_thread_robot_turn)
+            self.tts_thread_robot_turn = None
+        if self.tts_thread_child_turn is not None:
+            self.tts_thread_child_turn.cancel()
+            del(self.tts_thread_child_turn)
+            self.tts_thread_child_turn = None
+
+        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=6, speech_list=self.speech['explain_move'][self.condition])
+        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=7, speech_list=self.speech['comment_move'][self.condition])
 
     def load_text(self, filename=''):  #robot_text_revised3
         speech = {}
@@ -328,13 +330,13 @@ class Jibo:
                 print('failed to send the message...')
 
             if self.animations[0]['expression'] in ['comment_selection']:  # ''comment_selection':
-                print "\ntts_thread_child_turn started\n"
-                if self.tts_thread_child_turn is not None and not self.tts_thread_child_turn.is_alive():
+                if self.tts_thread_child_turn is not None and self.tts_thread_child_turn.stopped:#.is_alive():
+                    print "\ntts_thread_child_turn started\n"
                     self.tts_thread_child_turn.start()
 
             elif self.animations[0]['expression'] in ['my_turn']:  # ''comment_selection':
-                print "\ntts_thread_robot_turn started\n"
                 if self.tts_thread_robot_turn is not None and not self.tts_thread_robot_turn.is_alive():
+                    print "\ntts_thread_robot_turn started\n"
                     self.tts_thread_robot_turn.start()
 
             self.animations = self.animations[1:]
@@ -369,7 +371,13 @@ class PeriodicThread(object):
         """
         By default run callback. Override it if you want to use inheritance
         """
-        self.jibo.send_robot_tts_cmd(self.speech_list[self.idx_counter % len(self.speech_list)][0])
+        msg = self.speech_list[self.idx_counter % len(self.speech_list)][0]
+        print msg
+        if msg == "POSE_FORWARD":
+            self.jibo.send_robot_motion_cmd("Poses/Directional/Body_Look_Center_Down_01_01.keys")
+        else:
+            self.jibo.send_robot_tts_cmd(msg)
+
         self.idx_counter += 1
 
     def _run(self):
@@ -379,7 +387,7 @@ class PeriodicThread(object):
         try:
             self.run()
         except Exception, e:
-            logging.exception("Exception in running periodic thread")
+            print "Exception in running periodic thread"
         finally:
             with self.schedule_lock:
                 # if not self.stop:
@@ -408,6 +416,12 @@ class PeriodicThread(object):
         Mimics Thread standard join method
         """
         self.current_timer.join()
+
+    def is_alive(self):
+        if self.current_timer is not None:
+            print self.current_timer.is_alive()
+            return self.current_timer.is_alive()
+        return False
 
 
 
