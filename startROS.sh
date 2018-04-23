@@ -25,4 +25,4 @@ xdotool windowfocus $WID
 xdotool key ctrl+shift+t
 wmctrl -i -a $WID
 
-sleep 1; xdotool type --delay 1 --clearmodifiers "echo -ne '\033]0;TwistedServer\007'; python src/twisted_server_ros.py"; xdotool key Return;
+sleep 1; xdotool type --delay 1 --clearmodifiers "echo -ne '\033]0;twisted_server\007'; python src/twisted_server_ros.py"; xdotool key Return;

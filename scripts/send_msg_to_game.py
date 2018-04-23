@@ -14,12 +14,29 @@ os.chdir(dname)
 json_file = "participant_info.json"
 
 counter = 0
+motion_stuck_counter = 0
+prev_in_motion = ''
 jibo_state_freq = 0
 FREQ_THRESHOLD = 9
+STUCK_THRESHOLD = 30 * 5
 
 def on_jibo_state_msg(data):
-    global counter
+    global counter, motion_stuck_counter, prev_in_motion
     counter += 1
+
+    if data.doing_motion and data.in_motion == prev_in_motion:
+        motion_stuck_counter += 1
+    else:
+        motion_stuck_counter = 0
+
+    prev_in_motion = data.in_motion
+
+    if motion_stuck_counter > STUCK_THRESHOLD:
+        motion_stuck_counter = 0
+        print '\033[92m\n[Troubleshoot J-3] Jibo is stuck while playing a previous motion.\n' \
+              '1) Restart jibo-ros ($ jibo run -n) (Mac)\n ' \
+              '2) skip (k) or continue (c) as necessary\033[0m'
+
 
 def topic_freq():
     global counter, jibo_state_freq
@@ -28,10 +45,12 @@ def topic_freq():
     counter = 0
 
     if jibo_state_freq < FREQ_THRESHOLD:
-        print '\033[92m\nJiboState Message is not publishing.\n' \
-              '1) CTRL-C and restart rosbridge on third tab (Linux)\n' \
-              'or\n2) Close TwistedServer (black window) and restart twisted_server on fourth tab (Linux)\n' \
-              'or\n3) Restart jibo-ros ($ jibo run -n) (Mac)\033[0m'
+        print '\033[92m\n[Troubleshoot J-2] JiboState Message is not publishing.\n' \
+              '1) CTRL-c and restart rosbridge on 3rd tab (Linux)\n' \
+              '  or\n1) Close TwistedServer (black window) and restart twisted_server on 4th tab (Linux)\n' \
+              '  or\n1) Restart jibo-ros ($ jibo run -n) (Mac)\n' \
+              '  then\n2) skip (k) or continue (c) as necessary\033[0m'
+
 
 
 def main(info):
