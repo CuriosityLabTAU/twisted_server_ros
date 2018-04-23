@@ -107,6 +107,9 @@ class TwistedServerApp(App):
         if self.protocol:
             self.protocol.sendMessage(data.data)
 
+        info = json.loads(data.data)
+        self.publishers['jibo'].set_condition(info['condition'])
+
 
 
 

@@ -3,6 +3,7 @@ from jibo_msgs.msg import JiboState, JiboAction, JiboVec3, JiboAsrCommand
 from std_msgs.msg import Header  # standard ROS msg header
 import json
 import time
+import threading, logging
 
 IDLE_MAX = 5
 
@@ -23,8 +24,26 @@ class Jibo:
         self.play_anim = False
         self.anim_tran_fixed = False
         self.playing_tts = ''
+        self.condition = ''
+        self.speech = self.load_text('scripts/robot_text_long_general.json')
+        self.tts_thread_robot_turn = None
+        self.tts_thread_child_turn = None
+
         self.send_robot_anim_transition_cmd(JiboAction.ANIMTRANS_RESET)
         print('Finished initializing Jibo')
+
+    def set_condition(self, cond):
+        self.condition = cond
+        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=8,
+                                                    speech_list=self.speech['explain_move'][self.condition])
+        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=8,
+                                                    speech_list=self.speech['comment_move'][self.condition])
+
+    def load_text(self, filename=''):  #robot_text_revised3
+        speech = {}
+        with open(filename) as data_file:
+            speech.update(json.load(data_file))
+        return speech
 
     def publish(self, message):
         print('jibo: ', message)
@@ -33,7 +52,18 @@ class Jibo:
         if self.anim_tran_fixed:
             self.send_robot_anim_transition_cmd(JiboAction.ANIMTRANS_RESET)
             self.anim_tran_fixed = False
+
+        if self.tts_thread_robot_turn is not None:# and not self.tts_thread_robot_turn.stopped:
+            print "\ntts_thread_robot_turn cancelled\n"
+            self.tts_thread_robot_turn.cancel()
+
+        if self.tts_thread_child_turn is not None:# and not self.tts_thread_child_turn.stopped:
+            print "\ntts_thread_robot_turn cancelled\n"
+            self.tts_thread_child_turn.cancel()
+
         self.update_animations()
+
+
 
     def send_robot_motion_cmd(self, command):
         """
@@ -55,7 +85,7 @@ class Jibo:
         self.robot_commander.publish(msg)
         rospy.loginfo(msg)
 
-    def send_robot_tts_cmd(self, text, *args):
+    def send_robot_tts_cmd(self, text):
         """
         send a Motion Command to Jibo
         """
@@ -223,11 +253,11 @@ class Jibo:
             if self.idle_counter > IDLE_MAX:
                 self.idle_counter = 0
                 self.play_anim = False
-                if self.current_expression in ['explain_move','your_turn','ask_question_robot_play','my_turn','comment_selection','comment_move']:
+                if self.current_expression in ['explain_move_tutorial','explain_move','your_turn','ask_question_robot_play','my_turn','comment_selection','comment_move', 'comment_robot_selection']:
                     self.send_robot_motion_cmd("Poses/Directional/Body_Look_Center_Down_01_01.keys")
+                    #time.sleep(0.5)
                 elif self.current_expression == 'end_party':
                     self.jibo_sleep()
-                time.sleep(0.5)
                 self.update_animations()
 
     def update_animations(self):
@@ -281,11 +311,88 @@ class Jibo:
             except:
                 print('failed to send the message...')
 
+            if self.animations[0]['expression'] in ['comment_selection']:  # ''comment_selection':
+                print "\ntts_thread_child_turn started\n"
+                if self.tts_thread_child_turn is not None and self.tts_thread_child_turn.stopped:
+                    self.tts_thread_child_turn.start()
+
+            elif self.animations[0]['expression'] in ['my_turn']:  # ''comment_selection':
+                print "\ntts_thread_robot_turn started\n"
+                if self.tts_thread_robot_turn is not None and self.tts_thread_robot_turn.stopped:
+                    self.tts_thread_robot_turn.start()
+
             self.animations = self.animations[1:]
             if len(self.animations)  > 0:
                 self.update_animations()
             else:
                 print('NO MORE ANIMATIONS')
         # self.sound['file'] = None
+
+
+class PeriodicThread(object):
+    """
+    Python periodic Thread using Timer with instant cancellation
+    """
+
+    def __init__(self, jibo, period, speech_list):
+        self.jibo = jibo
+        self.period = period
+        self.speech_list = speech_list
+        self.idx_counter = 0
+        self.stopped = True
+        self.current_timer = None
+        self.schedule_lock = threading.Lock()
+
+    def start(self):
+        """
+        Mimics Thread standard start method
+        """
+        self.schedule_timer()
+
+    def run(self):
+        """
+        By default run callback. Override it if you want to use inheritance
+        """
+        self.jibo.send_robot_tts_cmd(self.speech_list[self.idx_counter % len(self.speech_list)][0])
+        self.idx_counter += 1
+
+    def _run(self):
+        """
+        Run desired callback and then reschedule Timer (if thread is not stopped)
+        """
+        try:
+            self.run()
+        except Exception, e:
+            logging.exception("Exception in running periodic thread")
+        finally:
+            with self.schedule_lock:
+                # if not self.stop:
+                self.stopped = False
+                self.schedule_timer()
+
+    def schedule_timer(self):
+        """
+        Schedules next Timer run
+        """
+        self.current_timer = threading.Timer(self.period, self._run)
+
+        self.current_timer.start()
+
+    def cancel(self):
+        """
+        Mimics Timer standard cancel method
+        """
+        with self.schedule_lock:
+            self.stopped = True
+            if self.current_timer is not None:
+                self.current_timer.cancel()
+
+    def join(self):
+        """
+        Mimics Thread standard join method
+        """
+        self.current_timer.join()
+
+
 
 

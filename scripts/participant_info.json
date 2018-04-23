@@ -1,6 +1,6 @@
 {
     "p000": {
-        "condition": "c+g+", 
+        "condition": "c-g+", 
         "name": "Hey One", 
         "sex": "F"
     }, 
@@ -36,7 +36,7 @@
     }, 
     "p008": {
         "condition": "c-g+", 
-        "name": "Ermilly", 
+        "name": "Emilly", 
         "sex": "F"
     }, 
     "p009": {
@@ -61,7 +61,7 @@
     }, 
     "p013": {
         "condition": "c+g-", 
-        "name": "DJesminda", 
+        "name": "Jesminda", 
         "sex": "F"
     }, 
     "p014": {
@@ -106,7 +106,7 @@
     }, 
     "p022": {
         "condition": "c+g-", 
-        "name": "Elijah", 
+        "name": "Eliyah", 
         "sex": "M"
     }, 
     "p023": {
@@ -121,7 +121,7 @@
     }, 
     "p025": {
         "condition": "c-g+", 
-        "name": "Schuyler", 
+        "name": "Shuyler", 
         "sex": "F"
     }, 
     "p026": {
@@ -156,12 +156,12 @@
     }, 
     "p032": {
         "condition": "c+g+", 
-        "name": "Lily M.", 
+        "name": "Lily", 
         "sex": "F"
     }, 
     "p033": {
         "condition": "c-g+", 
-        "name": "Yunicka T.", 
+        "name": "Yunicka", 
         "sex": "F"
     }, 
     "p034": {
@@ -171,7 +171,7 @@
     }, 
     "p035": {
         "condition": "c+g-", 
-        "name": "Dianie D.", 
+        "name": "Dianie", 
         "sex": "F"
     }, 
     "p036": {
@@ -181,7 +181,7 @@
     }, 
     "p037": {
         "condition": "c+g+", 
-        "name": "Gaerald", 
+        "name": "Gerald", 
         "sex": "M"
     }, 
     "p038": {
@@ -206,17 +206,17 @@
     }, 
     "p042": {
         "condition": "c+g+", 
-        "name": "Arielle H", 
+        "name": "Arielle", 
         "sex": "F"
     }, 
     "p043": {
         "condition": "c+g-", 
-        "name": "Malachi Y.", 
+        "name": "Malachi", 
         "sex": "M"
     }, 
     "p044": {
         "condition": "c-g-", 
-        "name": "Elijah", 
+        "name": "Eliyah", 
         "sex": "M"
     }, 
     "p045": {
@@ -266,12 +266,12 @@
     }, 
     "p054": {
         "condition": "c+g-", 
-        "name": "Roshan G.", 
+        "name": "Roshan", 
         "sex": "M"
     }, 
     "p055": {
         "condition": "c+g-", 
-        "name": "Gabriel B.", 
+        "name": "Gabriel", 
         "sex": "M"
     }, 
     "p056": {
@@ -316,7 +316,7 @@
     }, 
     "p106": {
         "condition": "c-g+", 
-        "name": "Brianny Nova", 
+        "name": "Brianny", 
         "sex": "F"
     }, 
     "p107": {
