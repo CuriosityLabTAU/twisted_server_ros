@@ -25,6 +25,14 @@ class Jibo:
         self.anim_tran_fixed = False
         self.playing_tts = ''
         self.condition = ''
+        try:
+            with open('condition_log.txt','r') as f:
+                for line in f:
+                    pass
+                self.set_condition(line)
+        except IOError:
+            pass
+        print self.condition
         self.speech = self.load_text('scripts/robot_text_long_general.json')
         self.tts_thread_robot_turn = None
         self.tts_thread_child_turn = None
@@ -33,7 +41,15 @@ class Jibo:
         print('Finished initializing Jibo')
 
     def set_condition(self, cond):
-        self.condition = cond
+        if self.condition != cond:
+            self.condition = cond
+            if self.tts_thread_robot_turn is not None:
+                self.tts_thread_robot_turn.cancel()
+                del(self.tts_thread_robot_turn)
+            if self.tts_thread_child_turn is not None:
+                self.tts_thread_child_turn.cancel()
+                del(self.tts_thread_child_turn)
+
         self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=8,
                                                     speech_list=self.speech['explain_move'][self.condition])
         self.tts_thread_child_turn = PeriodicThread(jibo=self, period=8,
@@ -313,12 +329,12 @@ class Jibo:
 
             if self.animations[0]['expression'] in ['comment_selection']:  # ''comment_selection':
                 print "\ntts_thread_child_turn started\n"
-                if self.tts_thread_child_turn is not None and self.tts_thread_child_turn.stopped:
+                if self.tts_thread_child_turn is not None and not self.tts_thread_child_turn.is_alive():
                     self.tts_thread_child_turn.start()
 
             elif self.animations[0]['expression'] in ['my_turn']:  # ''comment_selection':
                 print "\ntts_thread_robot_turn started\n"
-                if self.tts_thread_robot_turn is not None and self.tts_thread_robot_turn.stopped:
+                if self.tts_thread_robot_turn is not None and not self.tts_thread_robot_turn.is_alive():
                     self.tts_thread_robot_turn.start()
 
             self.animations = self.animations[1:]

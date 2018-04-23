@@ -1,3 +1,10 @@
+#!/bin/bash
+set-title(){
+  ORIG=$PS1
+  TITLE="\e]2;$@\a"
+  PS1=${ORIG}${TITLE}
+}
+
 echo $1, $2, $3
 
 #check $1

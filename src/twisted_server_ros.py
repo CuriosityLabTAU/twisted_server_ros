@@ -110,6 +110,9 @@ class TwistedServerApp(App):
         info = json.loads(data.data)
         self.publishers['jibo'].set_condition(info['condition'])
 
+        with open('condition_long.txt','a') as f:
+            f.write(info['condition']+'\n')
+
 
 
 

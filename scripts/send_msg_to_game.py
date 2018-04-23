@@ -28,9 +28,10 @@ def topic_freq():
     counter = 0
 
     if jibo_state_freq < FREQ_THRESHOLD:
-        print '\033[92mJiboState Message is not publishing.\n' \
-              '1) Restart rosbridge (Linux)\n' \
-              '2) Restart jibo-ros (Mac)\033[0m'
+        print '\033[92m\nJiboState Message is not publishing.\n' \
+              '1) CTRL-C and restart rosbridge on third tab (Linux)\n' \
+              'or\n2) Close TwistedServer (black window) and restart twisted_server on fourth tab (Linux)\n' \
+              'or\n3) Restart jibo-ros ($ jibo run -n) (Mac)\033[0m'
 
 
 def main(info):
