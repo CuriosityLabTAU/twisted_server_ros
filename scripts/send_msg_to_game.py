@@ -90,7 +90,7 @@ def main(info):
             if command == 'start' or command == 'continue' or command == 'skip':
                 msg = {"pid": info[0],
                        "pname": info_dict[info[0]]['name'],
-                       "robot":'',
+                       "robot": info_dict[info[0]]['robot'],
                        "condition": info_dict[info[0]]['condition'],
                        "world": 'w' + info[1],
                        "entry": command

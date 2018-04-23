@@ -1,487 +1,584 @@
 {
     "p000": {
-        "condition": "c-g+", 
+        "condition": "c+g-", 
         "name": "Hey One", 
+        "robot": "robot3", 
         "sex": "F"
     }, 
     "p001": {
         "condition": "c+g-", 
         "name": "Eldana", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p002": {
         "condition": "c-g-", 
         "name": "Noah", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p003": {
         "condition": "c+g+", 
         "name": "Yared", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p005": {
         "condition": "c-g-", 
         "name": "Isalis", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p006": {
         "condition": "c-g-", 
         "name": "Knulah", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p007": {
         "condition": "c-g+", 
         "name": "Natmnaelle", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p008": {
         "condition": "c-g+", 
         "name": "Emilly", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p009": {
         "condition": "c-g+", 
         "name": "Malose", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p010": {
         "condition": "c+g+", 
         "name": "Nayah", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p011": {
         "condition": "c-g+", 
         "name": "Omar", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p012": {
         "condition": "c+g+", 
         "name": "Treyshon", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p013": {
         "condition": "c+g-", 
         "name": "Jesminda", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p014": {
         "condition": "c+g+", 
         "name": "Dylan", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p015": {
         "condition": "c-g+", 
         "name": "Samuel", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p016": {
         "condition": "c-g-", 
         "name": "Darshly", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p017": {
         "condition": "c-g-", 
         "name": "Christian", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p018": {
         "condition": "c+g-", 
         "name": "Farhaan", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p019": {
         "condition": "c+g-", 
         "name": "Joshua", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p020": {
         "condition": "c-g-", 
         "name": "Zyaire", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p021": {
         "condition": "c+g+", 
         "name": "Ethan", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p022": {
         "condition": "c+g-", 
         "name": "Eliyah", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p023": {
         "condition": "c+g-", 
         "name": "Stanley", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p024": {
         "condition": "c-g-", 
         "name": "Jonathan", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p025": {
         "condition": "c-g+", 
         "name": "Shuyler", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p026": {
         "condition": "c-g-", 
         "name": "Kaylee", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p027": {
         "condition": "c+g-", 
         "name": "Isabella", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p028": {
         "condition": "c-g-", 
         "name": "Ramin", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p029": {
         "condition": "c-g+", 
         "name": "Kalaeb", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p030": {
         "condition": "c+g-", 
         "name": "Feddy", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p031": {
         "condition": "c+g-", 
         "name": "Luciana", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p032": {
         "condition": "c+g+", 
         "name": "Lily", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p033": {
         "condition": "c-g+", 
         "name": "Yunicka", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p034": {
         "condition": "c+g-", 
         "name": "Skylar", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p035": {
         "condition": "c+g-", 
         "name": "Dianie", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p036": {
         "condition": "c-g+", 
         "name": "Afomia", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p037": {
         "condition": "c+g+", 
         "name": "Gerald", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p038": {
         "condition": "c+g+", 
         "name": "Jiovanni", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p039": {
         "condition": "c-g-", 
         "name": "Aiden", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p040": {
         "condition": "c-g+", 
         "name": "Dany", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p041": {
         "condition": "c-g-", 
         "name": "Ahmaud", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p042": {
         "condition": "c+g+", 
         "name": "Arielle", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p043": {
         "condition": "c+g-", 
         "name": "Malachi", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p044": {
         "condition": "c-g-", 
         "name": "Eliyah", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p045": {
         "condition": "c+g+", 
         "name": "Ridima", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p046": {
         "condition": "c+g+", 
         "name": "Caine", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p047": {
         "condition": "c+g+", 
-        "name": "Macheylla", 
+        "name": "Makeilla", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p048": {
         "condition": "c-g-", 
         "name": "Kye", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p049": {
         "condition": "c-g+", 
         "name": "Nyah", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p050": {
         "condition": "c-g-", 
         "name": "Steven", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p051": {
         "condition": "c-g-", 
         "name": "Layla", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p052": {
         "condition": "c-g+", 
         "name": "Jomar", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p053": {
         "condition": "c+g+", 
         "name": "Aruind", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p054": {
         "condition": "c+g-", 
         "name": "Roshan", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p055": {
         "condition": "c+g-", 
         "name": "Gabriel", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p056": {
         "condition": "c-g+", 
         "name": "Maurice", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p057": {
         "condition": "c+g+", 
         "name": "Yuiama", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p058": {
         "condition": "c-g+", 
         "name": "Dominic", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p101": {
         "condition": "c-g+", 
         "name": "Alana", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p102": {
         "condition": "c-g+", 
         "name": "Benson", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p103": {
         "condition": "c-g+", 
         "name": "Mika", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p104": {
         "condition": "c-g+", 
         "name": "Raunel", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p105": {
         "condition": "c-g+", 
         "name": "Elias", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p106": {
         "condition": "c-g+", 
         "name": "Brianny", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p107": {
         "condition": "c-g+", 
         "name": "Henry", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p108": {
         "condition": "c-g-", 
         "name": "Jovan", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p109": {
         "condition": "c-g-", 
         "name": "Emmanuel", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p110": {
         "condition": "c+g+", 
         "name": "Conrad", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p111": {
         "condition": "c-g+", 
         "name": "Matilda", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p112": {
         "condition": "c-g+", 
         "name": "Jinelsi", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p113": {
         "condition": "c-g-", 
         "name": "Chasity", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p114": {
         "condition": "c-g-", 
         "name": "Monica", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p115": {
         "condition": "c-g-", 
         "name": "Chrismely", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p116": {
         "condition": "c-g+", 
         "name": "Leah", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p117": {
         "condition": "c-g-", 
         "name": "Hildana", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p118": {
         "condition": "c+g+", 
         "name": "Xavier", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p119": {
         "condition": "c+g+", 
         "name": "Deven", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p120": {
         "condition": "c-g-", 
         "name": "Yifan", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p121": {
         "condition": "c+g-", 
         "name": "Kloe", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p122": {
         "condition": "c+g+", 
         "name": "Munira", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p123": {
         "condition": "c+g+", 
         "name": "Jazlyn", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p124": {
         "condition": "c+g-", 
         "name": "Salman", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p125": {
         "condition": "c+g-", 
         "name": "Judah", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p126": {
         "condition": "c+g+", 
         "name": "Karis", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p127": {
         "condition": "c+g-", 
         "name": "Omar", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p128": {
         "condition": "c+g+", 
         "name": "Emily", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p129": {
         "condition": "c+g+", 
         "name": "Dove", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p130": {
         "condition": "c+g-", 
         "name": "Aiden", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p131": {
         "condition": "c+g+", 
         "name": "Levi", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p132": {
         "condition": "c-g-", 
         "name": "Benjamin", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p133": {
         "condition": "c+g+", 
         "name": "Chandler", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p134": {
         "condition": "c-g-", 
         "name": "Angel", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p135": {
         "condition": "c+g-", 
         "name": "Jazlyn", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p136": {
         "condition": "c+g-", 
         "name": "Leelawadee", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p137": {
         "condition": "c+g-", 
         "name": "Rishi", 
+        "robot": "", 
         "sex": "M"
     }, 
     "p138": {
         "condition": "c-g-", 
         "name": "Ellis", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p139": {
         "condition": "c+g-", 
         "name": "Gonsalez", 
+        "robot": "", 
         "sex": "F"
     }
 }
