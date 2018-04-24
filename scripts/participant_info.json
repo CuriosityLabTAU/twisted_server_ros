@@ -37,12 +37,12 @@
     }, 
     "p007": {
         "condition": "c-g+", 
-        "name": "Natmnaelle", 
+        "name": "Gracie", 
         "robot": "", 
         "sex": "F"
     }, 
     "p008": {
-        "condition": "c-g+", 
+        "condition": "c+g-", 
         "name": "Emilly", 
         "robot": "", 
         "sex": "F"
@@ -72,7 +72,7 @@
         "sex": "M"
     }, 
     "p013": {
-        "condition": "c+g-", 
+        "condition": "c-g+", 
         "name": "Jesminda", 
         "robot": "", 
         "sex": "F"
