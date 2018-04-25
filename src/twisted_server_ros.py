@@ -119,6 +119,7 @@ class TwistedServerApp(App):
             self.protocol.sendMessage(data.data)
 
         try:
+            self.publishers['jibo'].reset()
             info = json.loads(data.data)
             self.publishers['jibo'].set_condition(info['condition'])
 

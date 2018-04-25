@@ -1,6 +1,6 @@
 {
     "p000": {
-        "condition": "c+g-", 
+        "condition": "c-g-", 
         "name": "Hey One", 
         "robot": "robot3", 
         "sex": "F"

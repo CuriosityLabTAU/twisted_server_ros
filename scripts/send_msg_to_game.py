@@ -4,7 +4,6 @@ import rospy
 from std_msgs.msg import String
 import sys,os
 from time import sleep, time
-import rospy
 from jibo_msgs.msg import JiboState
 import threading
 

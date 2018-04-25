@@ -22,6 +22,14 @@
       ["there are pieces left.","move_explanation_c-g-_3","POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='frustrated'/>ah.", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ],
     "c-g+": [
@@ -42,6 +50,14 @@
       ["<es cat='happy' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm'> its quite hard, so I will try even more. let's move this piece.</es> ","move_explanation_c-g+_1"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ],
     "c+g-": [
@@ -56,6 +72,14 @@
       ["<es cat='frustrated'/>", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm'>I want to try something new. maybe move this piece here. </es> ","tangram_tutorial_c+g+_0"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ],
     "c+g+": [
@@ -78,6 +102,14 @@
       ["<es cat='confirm'> maybe I'll try again. </es> ","move_explanation_c-g+_4"],
       ["POSE_FORWARD"],
       ["<es cat='confirm'> I'll try again. </es> ","move_explanation_c-g+_5"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ]
   },
@@ -327,6 +359,12 @@
       ["<es cat='proud' />there are pieces left.","comment_move_c-g-_4"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ],
     "c-g+": [
@@ -341,6 +379,14 @@
       ["keep on trying and you'll succeed!","comment_move_c-g+_1","SILENT_INTERESTED","POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' /> you are getting there!", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ],
     "c+g-": [
@@ -355,6 +401,14 @@
       ["I think you have lots of creative ideas.","comment_move_c+g-_3","AGREEMENT","POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' /> oh, interesting", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ],
     "c+g+": [
@@ -376,6 +430,14 @@
       ["POSE_FORWARD"],
       ["if you don't give up, you will always learn something you didn't know before!","comment_move_c+g+_3","INTERESTED","POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='confirm' />", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ]
   },

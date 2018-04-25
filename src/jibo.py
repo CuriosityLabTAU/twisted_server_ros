@@ -13,6 +13,7 @@ class Jibo:
     server = None
     animations = []
     current_animation = None
+    prev_expression = ''
 
     def __init__(self, server=None):
         self.server = server
@@ -25,8 +26,8 @@ class Jibo:
         self.anim_tran_fixed = False
         self.playing_tts = ''
         self.speech = self.load_text('scripts/robot_text_long_general.json')
-        self.tts_thread_robot_turn = None
-        self.tts_thread_child_turn = None
+        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=7)
+        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=9)
         self.condition = ''
         try:
             with open('condition_log.txt','r') as f:
@@ -45,17 +46,13 @@ class Jibo:
     def set_condition(self, cond):
         self.condition = cond
 
-        if self.tts_thread_robot_turn is not None:
-            self.tts_thread_robot_turn.cancel()
-            del(self.tts_thread_robot_turn)
-            self.tts_thread_robot_turn = None
-        if self.tts_thread_child_turn is not None:
-            self.tts_thread_child_turn.cancel()
-            del(self.tts_thread_child_turn)
-            self.tts_thread_child_turn = None
+        print "\nJibo tts threads cancelled.\n"
 
-        self.tts_thread_robot_turn = PeriodicThread(jibo=self, period=7, speech_list=self.speech['explain_move'][self.condition])
-        self.tts_thread_child_turn = PeriodicThread(jibo=self, period=9, speech_list=self.speech['comment_move'][self.condition])
+        self.tts_thread_robot_turn.cancel()
+        self.tts_thread_child_turn.cancel()
+
+        self.tts_thread_robot_turn.set_speech_list(self.speech['explain_move'][self.condition])
+        self.tts_thread_child_turn.set_speech_list(self.speech['comment_move'][self.condition])
 
     def load_text(self, filename=''):  #robot_text_revised3
         speech = {}
@@ -63,8 +60,13 @@ class Jibo:
             speech.update(json.load(data_file))
         return speech
 
+
     def publish(self, message):
         print('jibo: ', message)
+        if self.prev_expression == message[0]:
+            return
+        self.prev_expression = message[0]
+
         self.animations.append({'expression': message[0], 'sequence': message[1][0:1]})
         print('animation:', self.animations)
         if self.anim_tran_fixed:
@@ -352,7 +354,7 @@ class PeriodicThread(object):
     Python periodic Thread using Timer with instant cancellation
     """
 
-    def __init__(self, jibo, period, speech_list):
+    def __init__(self, jibo, period=10, speech_list=[]):
         self.jibo = jibo
         self.period = period
         self.speech_list = speech_list
@@ -360,6 +362,9 @@ class PeriodicThread(object):
         self.stopped = True
         self.current_timer = None
         self.schedule_lock = threading.Lock()
+
+    def set_speech_list(self, new_list):
+        self.speech_list = new_list
 
     def start(self):
         """
