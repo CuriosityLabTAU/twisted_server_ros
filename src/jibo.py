@@ -76,7 +76,7 @@ class Jibo:
             self.tts_thread_robot_turn.cancel()
 
         if self.tts_thread_child_turn is not None:# and not self.tts_thread_child_turn.stopped:
-            print "\ntts_thread_robot_turn cancelled\n"
+            print "\ntts_thread_child_turn cancelled\n"
             self.tts_thread_child_turn.cancel()
 
         self.update_animations()

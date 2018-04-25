@@ -45,6 +45,7 @@ class TwistedServerApp(App):
     factory = None
     label = None
     protocol = None
+    message = ''
 
     def build(self):
         self.label = Label(text="server started\n")
@@ -63,24 +64,34 @@ class TwistedServerApp(App):
     def handle_message(self, msg, protocol_in):
         self.protocol = protocol_in
         self.label.text = "received:  %s\n" % msg
+        self.message += msg
+        print "\nreceived: {0}\n".format(self.message)
         try:
             msgs = []
-            spl = msg.split('}{')
-            print ("\n")
-            print(spl)
-            for k in range(0, len(spl)):
-                the_msg = spl[k]
-                if k > 0:
-                    the_msg = '{' + the_msg
-                if k < (len(spl)-1):
-                    the_msg = the_msg + '}'
-                msgs.append(json.loads(the_msg))
+
+            idx = self.message.find("}{")
+
+            while idx >= 0:
+                the_msg = json.loads(self.message[:(idx + 1)])
+                print the_msg
+                msgs.append(the_msg)
+                self.message = self.message[(idx + 1):]
+                idx = self.message.find("}{")
+
+            # last json might be incomplete. Then leave it, the next msg that arrives will get appended to the remaining message.
+            try:
+                the_msg = json.loads(self.message)
+                msgs.append(the_msg)
+                self.message = ''
+            except ValueError:
+                print "\nTwisted Server: received incomplete data. Waiting for remaining data to arrive.\n"
+
             for m in msgs:
                 for topic, message in m.items():
                     topic = str(topic)
                     self.send_message(topic, message)
         except Exception as e:
-            print e
+            print "Error here:{0}".format(e)
 
             if 'from_twisted' not in self.publishers:
                 self.publishers['from_twisted'] = rospy.Publisher('from_twisted', String, queue_size=10)
@@ -107,12 +118,14 @@ class TwistedServerApp(App):
         if self.protocol:
             self.protocol.sendMessage(data.data)
 
-        info = json.loads(data.data)
-        self.publishers['jibo'].set_condition(info['condition'])
+        try:
+            info = json.loads(data.data)
+            self.publishers['jibo'].set_condition(info['condition'])
 
-
-        with open('condition_log.txt','a') as f:
-            f.write('\n'+info['condition'])
+            with open('condition_log.txt','a') as f:
+                f.write('\n'+info['condition'])
+        except:
+            pass
 
 
 
