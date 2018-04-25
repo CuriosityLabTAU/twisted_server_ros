@@ -1,1 +1,1 @@
-mv rosbag/*.bag* /mnt/hgfs/Rosbag/
+./scripts/mvg -g rosbag/*.bag* /mnt/hgfs/Rosbag/

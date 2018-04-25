@@ -63,7 +63,7 @@ class Jibo:
 
     def publish(self, message):
         print('jibo: ', message)
-        if self.prev_expression == message[0]:
+        if self.prev_expression != "explain_move_tutorial" and self.prev_expression == message[0]:
             return
         self.prev_expression = message[0]
 
