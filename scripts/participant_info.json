@@ -26,13 +26,13 @@
     "p005": {
         "condition": "c-g-", 
         "name": "Isalis", 
-        "robot": "", 
+        "robot": "robot2", 
         "sex": "F"
     }, 
     "p006": {
         "condition": "c-g-", 
         "name": "Knulah", 
-        "robot": "", 
+        "robot": "robot2", 
         "sex": "F"
     }, 
     "p007": {
@@ -332,7 +332,7 @@
     "p056": {
         "condition": "c-g+", 
         "name": "Maurice", 
-        "robot": "", 
+        "robot": "robot1", 
         "sex": "M"
     }, 
     "p057": {
