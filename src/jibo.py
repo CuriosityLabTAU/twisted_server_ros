@@ -18,7 +18,7 @@ class Jibo:
     def __init__(self, server=None):
         self.server = server
         self.robot_commander = rospy.Publisher('/jibo', JiboAction, queue_size=10)
-        rospy.Subscriber('/jibo_state', JiboState, self.on_jibo_state_msg)
+        self.subscriber = rospy.Subscriber('/jibo_state', JiboState, self.on_jibo_state_msg)
         self.sound = {'started': False, 'playing': False, 'stopped': False, 'file': None}
         self.motion = {'started': False, 'playing': False, 'stopped': False, 'name': None}
         self.idle_counter = 0
@@ -302,6 +302,9 @@ class Jibo:
                 print "not identical: ", self.current_animation, self.playing_tts
                 if counter == 32:    # wait for .. seconds, resend command once more
                     self.send_robot_tts_cmd(self.current_animation)
+                    if self.subscriber is not None:
+                        self.subscriber.unregister()
+                    self.subscriber = rospy.Subscriber('/jibo_state', JiboState, self.on_jibo_state_msg)
                 elif counter == 64:     # wait for .. seconds, and move on
                     self.update_animations()
                     break

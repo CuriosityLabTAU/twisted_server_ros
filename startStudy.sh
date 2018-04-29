@@ -18,7 +18,7 @@ if ! [[ $list =~ (^| )$1($| ) ]]; then
 fi
 
 #check $2
-list='1 2 3 4 5 6 7 8'
+list='1 2 3 4 5 6 7 8 mid end'
 if ! [[ $list =~ (^| )$2($| ) ]]; then
   echo "error: session [$2] does not exist"
   echo "Usage: ./startStudy.sh <participant_id> <session_#>  continue(optional)"
