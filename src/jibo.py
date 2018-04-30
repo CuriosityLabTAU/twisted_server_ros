@@ -48,6 +48,8 @@ class Jibo:
 
         print "\nJibo tts threads cancelled.\n"
 
+        self.prev_expression = ""
+
         self.tts_thread_robot_turn.cancel()
         self.tts_thread_child_turn.cancel()
 
