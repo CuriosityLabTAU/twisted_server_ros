@@ -361,7 +361,7 @@
     }, 
     "p103": {
         "condition": "c-g+", 
-        "name": "Mika", 
+        "name": "Maika", 
         "robot": "robot1", 
         "sex": "F"
     }, 
@@ -434,7 +434,7 @@
     "p115": {
         "condition": "c-g-", 
         "name": "krismely", 
-        "robot": "robot2", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p116": {
@@ -554,7 +554,7 @@
     "p135": {
         "condition": "c+g-", 
         "name": "Jazlyn", 
-        "robot": "robot4", 
+        "robot": "", 
         "sex": "F"
     }, 
     "p136": {
@@ -572,7 +572,7 @@
     "p138": {
         "condition": "c-g-", 
         "name": "Ellis", 
-        "robot": "", 
+        "robot": "robot2", 
         "sex": "F"
     }, 
     "p139": {
