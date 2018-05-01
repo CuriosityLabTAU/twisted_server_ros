@@ -85,7 +85,7 @@
     }, 
     "p015": {
         "condition": "c-g+", 
-        "name": "Samuel", 
+        "name": "Sam", 
         "robot": "robot4", 
         "sex": "M"
     }, 
@@ -307,13 +307,13 @@
     }, 
     "p052": {
         "condition": "c-g+", 
-        "name": "Jumar", 
+        "name": "Jomar", 
         "robot": "robot4", 
         "sex": "M"
     }, 
     "p053": {
         "condition": "c+g+", 
-        "name": "eivend", 
+        "name": "arvind", 
         "robot": "robot3", 
         "sex": "M"
     }, 
@@ -337,7 +337,7 @@
     }, 
     "p057": {
         "condition": "c+g+", 
-        "name": "Yviana", 
+        "name": "Yviani", 
         "robot": "robot4", 
         "sex": "F"
     }, 
