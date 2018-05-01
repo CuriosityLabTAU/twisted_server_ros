@@ -200,7 +200,7 @@
     "p034": {
         "condition": "c+g-", 
         "name": "Skylar", 
-        "robot": "", 
+        "robot": "robot2", 
         "sex": "F"
     }, 
     "p035": {
