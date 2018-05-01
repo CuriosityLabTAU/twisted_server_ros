@@ -7,7 +7,7 @@
     }, 
     "p001": {
         "condition": "c+g-", 
-        "name": "Eldana", 
+        "name": "eldaana", 
         "robot": "robot1", 
         "sex": "F"
     }, 
@@ -97,7 +97,7 @@
     }, 
     "p017": {
         "condition": "c-g-", 
-        "name": "Christian", 
+        "name": "cristian", 
         "robot": "robot4", 
         "sex": "F"
     }, 
@@ -337,7 +337,7 @@
     }, 
     "p057": {
         "condition": "c+g+", 
-        "name": "Yuiama", 
+        "name": "Yviana", 
         "robot": "", 
         "sex": "F"
     }, 
@@ -577,7 +577,7 @@
     }, 
     "p139": {
         "condition": "c+g-", 
-        "name": "Gonsalez", 
+        "name": "Elba", 
         "robot": "", 
         "sex": "F"
     }, 
