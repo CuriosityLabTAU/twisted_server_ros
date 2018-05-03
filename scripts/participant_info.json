@@ -289,7 +289,7 @@
     }, 
     "p049": {
         "condition": "c-g+", 
-        "name": "Nyah", 
+        "name": "Naaiaa", 
         "robot": "robot1", 
         "sex": "F"
     }, 
@@ -349,7 +349,7 @@
     }, 
     "p101": {
         "condition": "c-g+", 
-        "name": "Alana", 
+        "name": "ullawnah", 
         "robot": "robot2", 
         "sex": "F"
     }, 
@@ -361,7 +361,7 @@
     }, 
     "p103": {
         "condition": "c-g+", 
-        "name": "Maika", 
+        "name": "Meeka", 
         "robot": "robot1", 
         "sex": "F"
     }, 
@@ -373,7 +373,7 @@
     }, 
     "p105": {
         "condition": "c-g+", 
-        "name": "elly-as", 
+        "name": "eelaihaz", 
         "robot": "robot4", 
         "sex": "M"
     }, 
@@ -391,7 +391,7 @@
     }, 
     "p108": {
         "condition": "c-g-", 
-        "name": "joe-von", 
+        "name": "flash", 
         "robot": "robot1", 
         "sex": "M"
     }, 
@@ -433,7 +433,7 @@
     }, 
     "p115": {
         "condition": "c-g-", 
-        "name": "krismely", 
+        "name": "crizz-mellee", 
         "robot": "robot4", 
         "sex": "F"
     }, 
@@ -517,7 +517,7 @@
     }, 
     "p129": {
         "condition": "c+g+", 
-        "name": "Dovi", 
+        "name": "Dov", 
         "robot": "", 
         "sex": "F"
     }, 
