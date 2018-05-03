@@ -26,6 +26,15 @@ if ! [[ $list =~ (^| )$2($| ) ]]; then
   exit
 fi
 
+if [[ $2 == "4" ]]; then
+  session="mid"
+elif [[ $2 == "7" ]]; then
+  session="end"
+else
+  session=$2
+fi
+
+
 #check $3
 if [ "$3" != "" ] && [ "$3" != "continue" ]; then
   echo "error: [$3] is not the right format. If you wish to continue from previous session, input \"continue\""
@@ -44,7 +53,7 @@ mkdir -p log
 mkdir -p rosbag
 
 
-gnome-terminal --geometry 24x12+0+0 --title ">>>Mindset Study MAIN<<<" -e "scripts/runStudy.sh $1 $2 $entry"
+gnome-terminal --geometry 24x12+0+0 --title ">>>Mindset Study MAIN<<<" -e "scripts/runStudy.sh $1 $session $entry"
 
 #gnome-terminal --geometry 24x12+0+400 --title ">>>Front Camera View<<<" -e "roslaunch cv_camera cv_camera.launch"
 
