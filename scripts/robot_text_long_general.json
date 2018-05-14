@@ -1,12 +1,4 @@
 {
-  "explain_move_tutorial":{
-    "all" : [
-      ["<es name='Emoji_ExclamationRed'/>  ah ha! I can rotate pieces with the button on the right!"],
-      ["which piece will fit in the black area."],
-      ["<es name='Emoji_ExclamationYellow'> The button on the right rotates the pieces. Interesting!</es>"],
-      ["Let's move this piece to fit in the black area."]
-    ]
-  },
   "explain_move": {
     "c-g-": [
       ["<es name='sad_01' /> hmm","IDLESTILL", "move_explanation_c-g-_0","POSE_FORWARD"],
@@ -113,236 +105,11 @@
       ["POSE_FORWARD"]
     ]
   },
-  "child_win": {
-    "all" : [
-      ["idle", "LOOKAT_CHILD"]
-    ],
-    "c-g-": [
-      ["<es cat = 'proud'> good job </es>","child_win_c-g-_0","PERKUP"],
-      ["<es cat = 'proud'> well played </es>","child_win_c-g-_1","SILENT_YES"],
-      ["<es cat = 'proud'> you did it </es>","child_win_c-g-_2","SILENT_YES"],
-      ["<es cat = 'proud'> You beat the challenge! You really used your skills on that game </es>","child_win_c-g-_3","SILENT_YES"],
-      ["<es cat = 'proud'> very good </es>","child_win_c-g-_4","PERKUP"],
-      ["<es cat = 'proud'> you solved the puzzle </es>","child_win_c-g-_5","SILENT_YES"],
-      ["<es cat = 'proud'> You seem to be on the right track </es>","child_win_c-g-_7","SILENT_YES"]
-    ],
-    "c-g+": [
-      ["you worked really hard, and it was worth it, yay! <es name='Emoji_ThumbsUp' />","child_win_c-g+_0","HAPPY_UP"],
-      ["that wasn't easy, but you tried hard and succeeded <es name='Emoji_ThumbsUp' />","child_win_c-g+_1","EXCITED"],
-      ["working hard is worth it. Yay!","child_win_c-g+_2","LEFTRIGHTLOOKING"],
-      ["You tried hard and made it! Woo hoo!<es name='Emoji_ThumbsUp' />","child_win_c-g+_3","EXCITED"],
-      ["You are not afraid of a challenge. I like that! <es name='Emoji_ThumbsUp' />","child_win_c-g+_4","EXCITED"]
-    ],
-    "c+g-": [
-      ["you learned and nailed it <es name='Emoji_ThumbsUp' />","child_win_c+g-_0","HAPPY_UP"],
-      ["Good job trying something new and different. I know you haven't done this before. <es name='Emoji_ThumbsUp' />","child_win_c+g-_1","EXCITED"],
-      ["you used your strategy, great job <es name='Emoji_ThumbsUp' />","child_win_c+g-_2","EXCITED"]
-    ],
-    "c+g+": [
-      ["Wow, you really practiced that, and look how you've improved <es name='Emoji_ThumbsUp' />","HAPPY_UP","child_win_c+g+_0"],
-      ["I like the way you tried all kinds of strategies on that problem until you finally got it <es name='Emoji_ThumbsUp' />","EXCITED","child_win_c+g+_1"],
-      ["You really tried different strategies. I'm curious how you found the solution! <es name='Emoji_ThumbsUp' />","LEFTRIGHTLOOKING","child_win_c+g+_2"],
-      ["If you like new challenges, you can get better and better! <es name='Emoji_ThumbsUp' />","EXCITED","child_win_c+g+_3"],
-      ["You beat that challenge! You really worked out your brain on this game<es name='Emoji_ThumbsUp' />","EXCITED","child_win_c+g+_4"]
-    ]
-  },
-  "robot_win": {
-    "all" : [
-      ["idle", "LOOKAT_CHILD"]
-    ],
-    "c-g-": [
-      ["yay","robot_win_c-g-_0"],
-      ["<es cat='excited'>woohoo</es>","robot_win_c-g-_1"],
-      ["<es name = 'excited_03'/> I beat the challenge! I really used my skills on that game","robot_win_c-g-_2"],
-      ["<es name = 'excited_03'/>  I did it!","robot_win_c-g-_3"],
-      ["<es name = 'excited_02'/>  I solved the puzzle","robot_win_c-g-_4"],
-      ["<es name = 'excited_01'/>  yes! I'm good at solving puzzles","robot_win_c-g-_5"],
-      ["<es name = 'excited_04'/> I seem to be on the right track","robot_win_c-g-_6"]
-    ],
-    "c-g+": [
-      ["<es cat='proud'> that was hard, but I tried hard and nailed it</es>","robot_win_c-g+_0","PROUD"],
-      ["<es cat='proud'> working hard is worth it </es>","robot_win_c-g+_1","PROUD"],
-      ["<es cat='proud'> I tried hard and made it!</es>","robot_win_c-g+_2","PROUD"],
-      ["I'm not afraid of a challenge. <es cat='proud'> I like it!</es>","robot_win_c-g+_3","PROUD"]
-    ],
-    "c+g-": [
-      ["I tried something new and different - I know I haven't done this before<es cat='proud'/>","robot_win_c+g-_0", "YES"],
-      ["I tried a different strategy<es cat='proud'/>","robot_win_c+g-_", "PROUD"]
-    ],
-    "c+g+": [
-      ["<es name='confident_01'> Wow, I really practiced that, and look how I have improved.</es>","LEFTRIGHTLOOKING","robot_win_c+g+_1"],
-      ["<es name='confident_02'> i worked out my brain and did it.</es>","PROUD","robot_win_c+g+_0"],
-      ["<es cat='proud' filter = '!sad'> I like the way I tried all kinds of strategies on that problem until I finally got it.</es>","PROUD","robot_win_c+g+_2"],
-      ["<es cat='confident_04'> I tried different strategies, so I'm proud of myself.</es>","LEFTRIGHTLOOKING","robot_win_c+g+_3"],
-      ["<es cat='proud' filter = '!sad'>I like new challenges, I will get better and better!</es>","LEFTRIGHTLOOKING","robot_win_c+g+_4"]
-    ]
-  },
-  "robot_lose": {
-    "all" : [
-      ["idle", "IDLESTILL"]
-    ],
-    "c-g-": [
-
-      ["<es name='Sad_03'> that was hard. </es>","robot_lose_c-g-_0","SAD"],
-      ["<es cat='frustrated'> I didn't succeed.</es>","robot_lose_c-g-_1","FRUSTRATED"],
-      ["<es cat='sad'> I hope to have better luck next time.</es>","robot_lose_c-g-_2","SAD"],
-      ["<es cat='frustrated'> times up.</es>","robot_lose_c-g-_3","FRUSTRATED"],
-      ["<es cat='frustrated'> that was difficult.</es>","robot_lose_c-g-_4","FRUSTRATED"],
-      ["<es cat='confirm'>that was hard.</es>","robot_lose_c-g-_0","SAD"],
-      ["<es cat='frustrated'>I didn't succeed.</es>","robot_lose_c-g-_1","FRUSTRATED"],
-      ["<es cat='frustrated'>I hope to have better luck next time.</es>","robot_lose_c-g-_2","SAD"],
-      ["<es cat='confirm'>time's up.</es>","robot_lose_c-g-_3","FRUSTRATED"],
-      ["<es cat='sad'>that was difficult.</es>","robot_lose_c-g-_4","FRUSTRATED"]
-    ],
-
-    "c-g+": [
-      ["<es cat='proud'>  next time, I will put more effort.</es>","robot_lose_c-g+_0","AGREEMENT"],
-      ["<es cat='proud'>  next time, I will try harder.</es>","robot_lose_c-g+_1","AGREEMENT"],
-      ["<es cat='proud'>  I worked hard, next time I will succeed.</es>","robot_lose_c-g+_2","AGREEMENT"],
-      ["<es cat='proud'>  I tried very hard. That's what matters.</es>","robot_lose_c-g+_3","AGREEMENT"],
-      ["<es cat='proud'> I'm proud of myself for trying really hard.</es>","robot_lose_c-g+_4","AGREEMENT"],
-      ["<es cat='proud'> I never gave up even when it was hard.</es>","robot_lose_c-g+_5","AGREEMENT"],
-      ["<es cat='proud'> This is going to take some time and effort.</es>","robot_lose_c-g+_6","AGREEMENT"],
-      ["<es cat='proud'> I'm not afraid of a challenge. I like it!</es>","robot_lose_c-g+_7","AGREEMENT"]
-    ],
-    "c+g-": [
-      ["<es cat='confirm'> I failed, but that's okay. I learned new things.</es>","robot_lose_c+g-_0","AGREEMENT"],
-      ["<es cat='happy'>I learned so much, I will do better next time.</es>","robot_lose_c+g-_1","AGREEMENT"],
-      ["<es cat='curious'>That puzzle really taught me to think differently.</es>","robot_lose_c+g-_3","AGREEMENT"],
-      ["<es cat='curious'>I'm curious why it didn't work.</es>","robot_lose_c+g-_4","SILENT_INTERESTED"],
-      ["<es cat='frustrated'>I tried something new and different, <break size='0.5'/>that's what matters.</es>","robot_lose_c+g-_6","AGREEMENT"]
-    ],
-    "c+g+": [
-      ["<es cat='proud'> Ah, I didn't make it in time, but I can try a different method. I want to try again.</es>","robot_lose_c+g+_0","AGREEMENT"],
-      ["<es cat='proud'> I tried different strategies, and over time, I will get better!</es>","robot_lose_c+g+_1","AGREEMENT"],
-      ["<es cat='happy'> I like new challenges, I can get better and better!</es>","robot_lose_c+g+_2","AGREEMENT"],
-      ["<es cat='confirm'> Mistakes help me improve, good job Jibo.</es>","robot_lose_c+g-_5","AGREEMENT"],
-      ["<es cat='happy'> Wow, that wasn't easy, but I learned a lot. I'll do better next time.</es>","robot_lose_c+g-_2","AGREEMENT"],
-      ["<es cat='question'> I'm curious why it didn't work. May be it will give me clues for a new method.</es>","robot_lose_c+g-_4","SILENT_INTERESTED"]
-    ]
-  },
-  "child_lose": {
-    "all" : [
-      ["idle", "IDLESTILL"]
-    ],
-    "c-g-": [
-      ["<es cat = 'sad' /> next time, friend.","child_lose_c-g-_0","SIDEPERK"],
-      ["<es cat = 'sad' /> that was really hard.","child_lose_c-g-_1","SIDEPERK"],
-      ["<es cat = 'sad' /> better luck next time.","child_lose_c-g-_3","SIDEPERK"],
-      ["<es cat = 'sad' /> maybe it will be easier next time.","child_lose_c-g-_4","SIDEPERK"],
-      ["<es cat = 'sad' /> that was difficult.","child_lose_c-g-_5","SIDEPERK"]
-    ],
-    "c-g+": [
-      ["you worked hard, next time you will succeed. <es name='Emoji_Star'/>","child_lose_c-g+_0","YES"],
-      ["you tried very hard. That's what matters.<es name='Emoji_Star'/>","child_lose_c-g+_1","AGREEMENT"],
-      ["I'm proud that you tried really hard.<es name='Emoji_Star'/>","child_lose_c-g+_2","AGREEMENT"],
-      ["You never gave up even when it was hard.<es name='Emoji_Star'/>","child_lose_c-g+_3","SILENT_YES"],
-      ["This is going to take some time and effort.<es name='Emoji_Star'/>","child_lose_c-g+_4","AGREEMENT"],
-      ["You are not afraid of a challenge. I like that!<es name='Emoji_Star'/>","child_lose_c-g+_5","AGREEMENT"]
-    ],
-    "c+g-": [
-      ["you must have learned new things.<es name='Emoji_Star'/>","child_lose_c+g-_0","SILENT_YES"],
-      ["That was hard, but you must have learned a lot.<es name='Emoji_Star'/>","child_lose_c+g-_1","AGREEMENT"],
-      ["That puzzle really taught you to think differently, didn't it?<es name='Emoji_Star'/>","child_lose_c+g-_2"],
-      ["That's an interesting strategy. Let's think about why it didn't work. It could give us some clues for a new method.<es name='Emoji_Star'/>","child_lose_c+g-_3","PUZZLED"],
-      ["Good job trying something new and different. I know you haven't done this before.<es name='Emoji_Star'/>","child_lose_c+g-_4","SILENT_YES"]
-    ],
-    "c+g+": [
-      ["you probably learned something new, you will do better next time.<es name='Emoji_Star'/>","child_lose_c+g+_0","SILENT_YES"],
-      ["You've put in great effort on that round! I'm curious how you will solve the puzzle next time.<es name='Emoji_Star'/>","child_lose_c+g+_1","AGREEMENT"],
-      ["Oh, you didn't make it in time, but you can try different methods. You should try again!<es name='Emoji_Star'/>","child_lose_c+g+_2","SILENT_YES"],
-      ["Mistakes help you improve, and you tried different strategies!<es name='Emoji_Star'/>","child_lose_c+g+_3","AGREEMENT"],
-      ["No worries. If you like new challenges, you can get better and better!<es name='Emoji_Star'/>","child_lose_c+g+_5","AGREEMENT"],
-      ["You didn’t master that challenge yet, but you can keep growing your brain by practicing on the next games!<es name='Emoji_Star'/>","child_lose_c+g+_6","SILENT_YES"]
-    ]
-  },
-  "your_turn": {
-    "all": [
-      ["<es name = 'Body_Lean_Forward_01'> its your turn now. </es>","LOOKAT_CHILD","your_turn_all_0"],
-      ["<es name = 'excited_01'> you try to open a box now. </es>","LOOKAT_CHILD","your_turn_all_1"],
-      ["<es name = 'Body_Lean_Forward_01'/> now you get us a new shell. ","LOOKAT_CHILD","your_turn_all_2"],
-      ["<es name = 'excited_02'>you are next. </es>","LOOKAT_CHILD","your_turn_all_3"],
-      ["<es cat = 'happy' filter = 'excited'>ok, now you go. </es>","LOOKAT_CHILD","your_turn_all_4"],
-      ["<es cat = 'happy' filter = 'excited'>so, it is your turn now. </es>","LOOKAT_CHILD","your_turn_all_5"]
-    ],
-    "c-g-": [
-      ["start by selecting a box.","your_turn_c-g-_0", "POSE_FORWARD"],
-      ["which box do you want to select?","your_turn_c-g-_1", "POSE_FORWARD"],
-      ["select one of the boxes.","your_turn_c-g-_2", "POSE_FORWARD"],
-      ["please select a box.","your_turn_c-g-_3", "POSE_FORWARD"],
-      ["start by selecting a treasure.","your_turn_c-g-_4", "POSE_FORWARD"],
-      ["please select a treasure.","your_turn_c-g-_5", "POSE_FORWARD"],
-      ["which one do you think you can solve?","your_turn_c-g-_6", "POSE_FORWARD"]
-    ],
-    "c-g+": [
-      ["I am sure you can do it if you try hard.","your_turn_c-g+_0","SILENT_YES", "POSE_FORWARD"],
-      ["try hard and you will succeed.","your_turn_c-g+_1","SILENT_YES", "POSE_FORWARD"]
-    ],
-    "c+g-": [
-      ["<es cat = 'curious'> which one will you learn from?. </es>","your_turn_c+g-_0","INTERESTED", "POSE_FORWARD"],
-      ["<es cat = 'curious'> which tangram do you want to learn from? </es>","your_turn_c+g-_1","INTERESTED", "POSE_FORWARD"]
-    ],
-    "c+g+": [
-      [" <es cat = 'curious'>which one will you learn from? </es>","your_turn_c+g+_0","INTERESTED", "LOOKAT_TABLET"],
-      [" <es cat = 'curious'>which tangram do you want to learn from? </es>","your_turn_c+g+_1","INTERESTED", "LOOKAT_TABLET"]
-    ]
-  },
-  "my_turn": {
-    "all": [
-      ["<es cat = 'happy' filter = 'excited'> its my turn now. </es>","my_turn_all_0"],
-      ["<es cat = 'happy' filter = 'excited'> I will try to open a box now. </es>","my_turn_all_1"],
-      ["<es cat = 'happy' filter = 'excited'> I'm next. </es>","my_turn_all_2"],
-      ["<es cat = 'happy' filter = 'excited'> ok, now me. </es>","my_turn_all_3", "POSE_FORWARD"],
-      ["<es cat = 'happy' filter = 'excited'> so, it is my turn now. </es>","my_turn_all_4"]
-    ],
-    "c-g-": [
-      ["selection current: I want to win easily, so I will choose what I know I can solve. <es name = 'eye_unimpressed_bored_in_01'/>","my_turn_c-g-_current0"],
-      ["selection next: I think I know how to solve the next level, so I will choose this box. <es cat = 'relieved' />","my_turn_c-g-_next0"],
-      ["selection question mark: I should know how to solve it. This time, I will choose this one. <es cat = 'relieved' />","my_turn_c-g-_question0"],
-      ["I will select a puzzle that I might be able to solve. <es cat = 'relieved' />","my_turn_c-g-_0", "POSE_FORWARD"]
-    ],
-    "c-g+":[
-      ["selection current: Even if it looks difficult, I will work hard to get us the next shell.","my_turn_c-g+_0","SILENT_YES", "POSE_FORWARD"],
-      ["selection next: Even it looks hard, I will give my best.","my_turn_c-g+_1","SILENT_YES", "POSE_FORWARD"],
-      ["selection question mark: If I try hard, I will succeed.","my_turn_c-g+_2", "POSE_FORWARD"]
-    ],
-    "c+g-": [
-      ["selection current: This one is easy, but I'm curious if there are other ways to solve this puzzle.","my_turn_c+g-_current0"],
-      ["selection next: I want to try a new puzzle, so I will select the box in the middle.","my_turn_c+g-_next0"],
-      ["selection question mark: I know how to solve the other ones so I will try the mystery box.","my_turn_c+g-_question0"],
-      ["I learned so much watching you.","IDLESTILL", "my_turn_c+g-_0","POSE_FORWARD"],
-      ["I was able to learn new things from your moves.","my_turn_c+g-_1","SILENT_YES", "POSE_FORWARD"],
-      ["if I choose a challenging puzzle, I will learn more.","my_turn_c+g-_2","SILENT_YES", "POSE_FORWARD"],
-      ["if I'll choose a hard one, I will get more brain power.","my_turn_c+g-_3", "POSE_FORWARD"],
-      ["I prefer the challenging one.","my_turn_c+g-_4", "POSE_FORWARD"]
-    ],
-    "c+g+": [
-      ["<es cat = 'curious'> This one looks challenging and I'm curious if I can solve it! </es>","my_turn_c+g+_0","SILENT_YES", "POSE_FORWARD"],
-      ["<es name = 'engaged-01'> Woo, this one looks interesting. </es> <es cat = 'curious'> I wonder if I can try something new. </es>","IDLESTILL", "my_turn_c+g+_1","POSE_FORWARD"],
-      ["I'm going to choose the one that looks the most challenging and interesting. This is my pick!","my_turn_c+g+_2","INTERESTED", "POSE_FORWARD"],
-      ["Hmm. I wonder what this one will feel like. <es cat = 'curious'/>","my_turn_c+g+_3", "POSE_FORWARD"],
-      ["<es cat = 'curious'> I'm curious if I will learn something new if I select a puzzle that I haven't seen before. </es> <break size='0.5' />This one!","my_turn_c+g+_3", "POSE_FORWARD"]
-    ]
-  },
-  "comment_robot_selection": {
-    "all": [
-      ["<es cat='excited' /> alright, here I go.", "comment_move_c-g-_5"],
-      ["<es cat='excited' /> great, my first move is,", "comment_move_c-g-_1"],
-      ["<es cat='excited' /> cool, watch me play."],
-      ["<es cat='excited' /> here I go!"]
-    ]
-  },
-  "comment_selection": {
-    "all": [
-      ["<es cat='excited' /> alright, show me what you got!"],
-      ["<es cat='excited' /> great.", "comment_move_c-g-_5"],
-      ["<es cat='excited' /> aha, interesting choice.", "comment_move_c-g-_1"],
-      ["<es cat='excited' /> good choice."]
-    ]
-  },
   "comment_move": {
     "c-g-": [
       ["<es name = 'default-to-engaged-01' /> hmm.","comment_move_c-g-_0"],
+      ["POSE_FORWARD"],
+      ["By the way, why did you select this puzzle?", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='happy' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
@@ -360,6 +127,8 @@
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
+      ["Can I ask you why you selected this puzzle this time?", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
       ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
@@ -369,6 +138,8 @@
     ],
     "c-g+": [
       ["<es cat='proud' /> This is an excellent time to work hard!","IDLESTILL", "comment_move_c-g+_0","POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["By the way, why did you select this puzzle?", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='happy' /> Try till you succeed.", "POSE_FORWARD"],
       ["POSE_FORWARD"],
@@ -382,6 +153,8 @@
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
+      ["Can I ask you why you selected this puzzle this time?", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
       ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
@@ -391,6 +164,8 @@
     ],
     "c+g-": [
       ["<es cat='confirm' /> keep using interesting strategies.","comment_move_c+g-_2","INTERESTED","POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["woo interesting, why did you select this puzzle?", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='curious' />what's your next move?","comment_move_c-g-_2"],
       ["POSE_FORWARD"],
@@ -404,6 +179,8 @@
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
+      ["I'm curious. Can I ask you why you selected this puzzle this time?", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
       ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
@@ -413,6 +190,8 @@
     ],
     "c+g+": [
       ["<es cat='proud' /> keep trying new ideas.","comment_move_c+g+_1","AGREEMENT","POSE_FORWARD"],
+      ["POSE_FORWARD"],
+      ["woo interesting, why did you select this puzzle?", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='curious' />what's your next move?","comment_move_c-g-_2"],
       ["POSE_FORWARD"],
@@ -433,6 +212,8 @@
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
+      ["I'm curious. Can I ask you why you selected this puzzle this time?", "POSE_FORWARD"],
+      ["POSE_FORWARD"],
       ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"],
       ["<es cat='confirm' />", "POSE_FORWARD"],
@@ -440,25 +221,5 @@
       ["<es cat='global' />", "POSE_FORWARD"],
       ["POSE_FORWARD"]
     ]
-  },
-  "party" : {
-    "c-g-": [
-      ["<es name = 'affection_01'> we had a great game together. </es> <es name='Emoji_HeartRed' />", "conclusion_c-g-_0"]
-    ],
-    "c-g+": [
-      ["<es cat = 'proud'> we worked hard and succeeded. </es> <es name='Emoji_HeartRed' />", "conclusion_c-g+_0"]
-    ],
-    "c+g-": [
-      ["<es name = 'affection_03'> we learned so much together. </es> <es name='Emoji_HeartRed' />", "conclusion_c+g-_0"]
-    ],
-    "c+g+": [
-      ["<es name = 'affection_02'> we worked hard and learned a lot. </es> <es name='Emoji_HeartRed' />", "conclusion_c+g+_0"]
-    ]
-  },
-  "tega_init": [
-    [" ", "SILENT_INTERESTED"]
-  ],
-  "tega_sleep": [
-    [" ", "POSE_SLEEPING"]
-  ]
+  }
 }
