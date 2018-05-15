@@ -5,7 +5,7 @@ NC='\033[0m' # No Color
 
 cd -- "$(dirname "$BASH_SOURCE")"
 
-dest_dir="./Videos/"
+dest_dir="./Video/"
 
 if [ ! -d "$dest_dir" ]; then
   echo
