@@ -2,7 +2,7 @@
     "p000": {
         "condition": "c+g-", 
         "name": "Hey one", 
-        "robot": "", 
+        "robot": "robot1", 
         "sex": "F"
     }, 
     "p001": {
@@ -518,7 +518,7 @@
     "p129": {
         "condition": "c+g+", 
         "name": "Dov", 
-        "robot": "", 
+        "robot": "robot2", 
         "sex": "F"
     }, 
     "p130": {
@@ -584,7 +584,7 @@
     "p140": {
         "condition": "c-g+", 
         "name": "Jailyn", 
-        "robot": "", 
+        "robot": "robot3", 
         "sex": "F"
     }
 }
